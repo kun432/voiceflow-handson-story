@@ -1,0 +1,143 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Voiceflowハンズオン＆ワークショップ：インタラクティブな物語スキルを作ろう</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="dist"
+                  title="Voiceflowハンズオン＆ワークショップ：インタラクティブな物語スキルを作ろう"
+                  environment="web"
+                  feedback-link="">
+    
+      <google-codelab-step label="概要" duration="0">
+        <h2 is-upgraded>はじめに</h2>
+<p class="image-container"><img alt="story01-001" src="img/7211548bbca918e7.png"></p>
+<p>本資料は、「Voiceflowハンズオン＆ワークショップ：インタラクティブな物語スキルを作ろう」のハンズオン用資料になります。</p>
+<p>アカウントのセットアップなど事前準備は以下をご覧ください。</p>
+<ul>
+<li>Voiceflowハンズオン: アカウントのセットアップ手順<br><a href="https://vf-handson-setup.netlify.com/#0" target="_blank">https://vf-handson-setup.netlify.com/#0</a></li>
+</ul>
+<h2 is-upgraded>注意</h2>
+<aside class="warning"><p>本手順書は2019年11月21日時点のものですが、Voiceflowの開発はかなり活発なので、本手順書通りに進めてもうまくいかない場合や画面が変更されている場合があります。ご容赦ください。（必要な場合は補足します）</p>
+</aside>
+<aside class="special"><p>不具合やお気づきの点があれば、<a href="https://github.com/kun432/voiceflow-handson-story/issues" target="_blank">https://github.com/kun432/voiceflow-handson-story/issues</a>でissue立てていただければと思います。PRも歓迎！</p>
+</aside>
+<aside class="special"><p>不具合やお気づきの点があれば、kun432.8d1w@gmail.comまで。</p>
+</aside>
+<h2 is-upgraded>更新履歴</h2>
+<ul>
+<li>2019/11/21    公開</li>
+</ul>
+<p>ではNextをクリックしてください</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="プロジェクトの作成と基本操作" duration="0">
+        <h2 is-upgraded>プロジェクトの作成</h2>
+<p>最初にプロジェクトを作成して、かんたんにVoiceflowの画面の説明を行います。</p>
+<p>以下のURLにアクセスしてください。<br><a href="https://voiceflow.com/" target="_blank">https://voiceflow.com/</a></p>
+<p>右上の&#34;Log in&#34;をクリック。</p>
+<p class="image-container"><img alt="story02-001" src="img/7bbaedc0450694be.png"></p>
+<p>アカウント作成した際のメールアドレスとパスワードを入力して&#34;Sign in&#34;をクリックします。</p>
+<p class="image-container"><img alt="story02-002" src="img/4e2e849d8e23d747.png"></p>
+<p>プロジェクトの一覧画面が表示されます。Default Listと書いてあるところの一番下の&#34;Create Project&#34;をクリックします。</p>
+<p class="image-container"><img alt="story02-003" src="img/57bbd4ca99e2cafa.png"></p>
+<p>プロジェクト作成画面が開きますので、以下の通り設定して、最後に&#34;Create Project&#34;をクリックします。</p>
+<ul>
+<li>プロジェクト名<ul>
+<li>今回は「世界の音絵本」と入力してください。</li>
+<li>スキルを呼び出すときのデフォルトの名前になります。（例：「アレクサ、◯◯◯を開いて」）</li>
+<li>後でプロジェクト名と呼び出し名のそれぞれを変更することも可能です。</li>
+</ul>
+</li>
+<li>言語: &#34;English(US)&#34;のチェックを外して、&#34;Japanese(JP)&#34;にチェック</li>
+</ul>
+<p class="image-container"><img alt="story02-004" src="img/5ffdc5ed7dba4a17.png"></p>
+<p>プロジェクトが作成されると&#34;Canvas&#34;画面が表示されます。&#34;Canvas&#34;画面がVoiceflowでスキルを作成する基本画面になります。</p>
+<ul>
+<li>最初から用意してあるHome Blockの中にあるStartがスタート地点になります。</li>
+<li>左のBlocksメニューにいろんな機能のBlockが用意されています。ここからBlockを選択してCANVAS上に配置します。</li>
+<li>CANVASに配置したBlockの設定を行い、アレクサに発話させたり、ユーザの発話を受け取ったりします。</li>
+<li>Block同士を線でつなげることで、会話の流れがつながっていきます。</li>
+<li>アップロードボタンをクリックすると、作成したプロジェクトがAlexa開発者コンソールにアップロードされ、Amazon Echoなどで呼び出せるようになります。</li>
+<li>Blocksメニュー以外にもいくつか別のメニューがありますが、後で説明します。</li>
+</ul>
+<p class="image-container"><img alt="story02-005" src="img/3dd575c47266eb21.png"></p>
+<p>では早速やってみましょう。</p>
+<h2 is-upgraded>CANVASとBlockの使い方</h2>
+<p>Voiceflowでは、いろんな機能を持ったBlockをCanvasに配置して線をつなぐことで、会話の流れを作ることになります。試しに少しやってみましょう。</p>
+<p>左のBlocksメニューの一番上にある&#34;Speak&#34;というブロックを、最初から配置してあるHome Blockの右側あたりにドラッグ＆ドロップで配置してください。すると、画面の右側に別の設定画面が出てくると思います。</p>
+<p class="image-container"><img alt="story02-006" src="img/4c537c010a645c14.png"></p>
+<p>この設定画面の右上の入力欄に以下と入力してみてください。</p>
+<pre><code>世界の音絵本にようこそ。このスキルでは、世界の有名な童話を楽しくお話します。
+</code></pre>
+<p class="image-container"><img alt="story02-007" src="img/6beb5afff6e305b4.png"></p>
+<p>そして、Home BlockのStartの右端からSpeak Blockの左端までドラッグしながら線でつなげます。</p>
+<p class="image-container"><img alt="story02-008" src="img/48d5665f5c37cdf.png"></p>
+<p>はい、これが基本的な操作になります。かんたんですよね？おさらいでもう一つSpeak Blockをつなげてみましょう。</p>
+<ul>
+<li>最初に配置したSpeak Blockの右側にもう一つSpeak Blockを配置します。</li>
+<li>Speak Blockの設定画面の入力欄に以下を入力します<br><code>桃太郎、シンデレラ、ガリバーの冒険、のどれを聞きたいですか？</code></li>
+<li>Speak Block同士を線でつなげます。</li>
+</ul>
+<p class="image-container"><img alt="story02-009" src="img/43ab257db3c17297.png"></p>
+<p>２回目なのでもう大丈夫ですよね。ではここで作ったスキルを実際に動かしてみたいと思います。</p>
+<h2 is-upgraded>スキルのアップロードとテスト</h2>
+<p>作成したスキルを動かすにはAlexa開発者コンソールへのアップロードが必要です。右上の&#34;Upload to Alexa&#34;というボタンをクリックしてください。</p>
+<p class="image-container"><img alt="story02-010" src="img/f6038f09942289be.png"></p>
+<p>初回に限り、VoiceflowアカウントとAlexa開発者アカウントの紐付けが必要になります。&#34;Connect Amazon&#34;ボタンをクリックしてください。</p>
+<p class="image-container"><img alt="story02-011" src="img/cb85e89627022ee.png"></p>
+<p>Amazonアカウントのログイン画面が出てきますので、お持ちのAmazonアカウントでログインします。</p>
+<p class="image-container"><img alt="story02-012" src="img/f1e24ada0fb22243.png"></p>
+<p>VoiceflowからAmazonアカウント経由でAlexaスキル作成等の許可を求める画面が出てきますので、「許可」をクリックします。これでアカウントの紐付けは完了です。</p>
+<p class="image-container"><img alt="story02-013" src="img/8cec939eb4dce69c.png"></p>
+<p>アップロードが行われます。100%になるまで待ちます。</p>
+<p class="image-container"><img alt="story02-014" src="img/469ac975162a1fb6.png"></p>
+<p>100％になって&#34;Upload Successful&#34;と表示されればアップロード完了です。ではAlexa開発者コンソールでテストしましょう。&#34;Test on Alexa Simulator&#34;をクリックしてください。</p>
+<p class="image-container"><img alt="story02-015" src="img/ee790bd9875b9af7.png"></p>
+<p>Alexa開発者コンソールのログイン画面が表示されたら、Amazonアカウントでログインしてください。</p>
+<p class="image-container"><img alt="story02-016" src="img/bbbfbd5247ad74b2.png"></p>
+<p>Alexa開発者コンソールのテストシミュレータ画面が表示されます。作成したスキルはここでほぼ実機と同じようにテストができます。</p>
+<p class="image-container"><img alt="story02-017" src="img/13443b871dd289c8.png"></p>
+<p>なお、この時、左上のところで「非公開」が選択されていた場合は「開発中」に変更します。</p>
+<p class="image-container"><img alt="story02-019" src="img/5b733189653efb96.png"></p>
+<p>テストは文字だけでなく音声でも行なえます。まず最初にマイクを有効にしておきましょう。「許可」をクリックします。</p>
+<p class="image-container"><img alt="story02-018" src="img/707dbd0117faacfa.png"></p>
+<p>ではいよいよテストです。「日本語」が選択されていることを確認して、マイクアイコンをクリックしたままマイクに「音絵本を開いて」と話しかけて、話し終わったら話してみてください。パソコンにマイクがない場合は、キーボードから入力してENTERキーを押してください。</p>
+<p class="image-container"><img alt="story02-020" src="img/dc1f179853a97fa3.png"></p>
+<p>あなたの発話に対して、Voiceflowで設定した内容をAlexaが返してくれればテストは成功です！これでスキル開発の第一歩を踏み出したことになります！おめでとうございます！</p>
+<p class="image-container"><img alt="story02-021" src="img/a0b9d0fd38d2bd00.png"></p>
+<p>このように、Voiceflowでスキルを作成 → Alexa開発者コンソールにアップロード → Alexa開発者コンソールでテスト、というのがVoiceflowでのスキル開発の流れになります。どうでしょうか？そんなに難しくないですよね？この調子で続けていきましょう！</p>
+<p>&#34;Next&#34;をクリックしてください</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+
+</body>
+</html>
