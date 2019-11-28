@@ -100,7 +100,9 @@
 <li>Speak Block同士を線でつなげます。</li>
 </ul>
 <p class="image-container"><img alt="story02-009" src="img/43ab257db3c17297.png"></p>
-<p>２回目なのでもう大丈夫ですよね。ではここで作ったスキルを実際に動かしてみたいと思います。</p>
+<p>２回目なのでもう大丈夫ですよね。ちなみに、線を引き直したい場合は、線の始点側のブロックの四角をクリックするか、線の真ん中にカーソルを合わせると表示されるバケツアイコンをクリックすると消せます。</p>
+<p class="image-container"><img alt="story02-009_2" src="img/9741aaf54c28b633.png"></p>
+<p>では作ったスキルを実際に動かしてみたいと思います。</p>
 <h2 is-upgraded>スキルのアップロードとテスト</h2>
 <p>作成したスキルを動かすにはAlexa開発者コンソールへのアップロードが必要です。右上の&#34;Upload to Alexa&#34;というボタンをクリックしてください。</p>
 <p class="image-container"><img alt="story02-010" src="img/f6038f09942289be.png"></p>
@@ -128,6 +130,81 @@
 <p class="image-container"><img alt="story02-021" src="img/a0b9d0fd38d2bd00.png"></p>
 <p>このように、Voiceflowでスキルを作成 → Alexa開発者コンソールにアップロード → Alexa開発者コンソールでテスト、というのがVoiceflowでのスキル開発の流れになります。どうでしょうか？そんなに難しくないですよね？この調子で続けていきましょう！</p>
 <p>&#34;Next&#34;をクリックしてください</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="いろいろなブロック" duration="0">
+        <p>ここで少し最初に使ったブロックの説明をしながら、他のブロックもご紹介します。</p>
+<h2 is-upgraded>Speak Block</h2>
+<p>最初に使ったSpeak Blockは、皆さんもうおわかりのように「アレクサがしゃべる」ブロックになります。</p>
+<p class="image-container"><img alt="story02-007" src="img/6beb5afff6e305b4.png"></p>
+<p>&#34;Speaking as&#34;の横のリストを変更すると、他の声に変更することができます。日本語はアレクサの他に、&#34;Mizuki&#34;（女性）、&#34;Takumi&#34;（男性）の声を選ぶことができます。物語に複数のキャラクターが出てくる場合などに活用できそうですね！</p>
+<p class="image-container"><img alt="story02-022" src="img/1f1e9f43afb1fac6.png"></p>
+<aside class="special"><p>ちなみに外国人の声を選ぶとカタコトの日本語みたいになって面白いです。外国人が日本に来た、みたいなシチュエーションで使うのも面白いかもしれません。</p>
+</aside>
+<aside class="warning"><p>ただし、外国人の声を選んだ場合、日本語を正しく発音してくれるかどうかは保証されません。今回は説明しませんが、外国人の声で外国語を話させる場合にはSSMLというタグを使って、どの言語を話すか？をきちんと指定するのが本来のやり方になります。</p>
+</aside>
+<p>その他、Speak Blockでは、サウンドを再生させることもできますが、それは後で説明します。</p>
+<h2 is-upgraded>Interaction Block</h2>
+<p>アレクサにしゃべらせることができたら、次は、ユーザがしゃべったことを受け取ってみるのにチャレンジしましょう。ユーザの発話を受け取るブロックは複数ありますが、もっとも活用の幅が広いInteraction Blockを使ってみましょう。</p>
+<p>Blocksメニューの下の方にAdvancedというサブメニューの中ににある Interaction Block を、2つ目のSpeak Blockの右側にドラッグアンドドロップして、線でつなげてください。</p>
+<p class="image-container"><img alt="story02-023" src="img/d658fa8285f386c9.png"></p>
+<p>Speak Blockのときと同じようにInteraction Blockの設定画面も表示されましたよね。Interaction Blockの設定画面に3つのタブがあるのがわかるでしょうか？</p>
+<p class="image-container"><img alt="story02-024" src="img/2b673c07b7d62d9d.png"></p>
+<p>それぞれのタブで設定する内容は以下となります。</p>
+<ul>
+<li>Choices<ul>
+<li>Intentsで設定したインテントに基づいて、会話の流れを分岐させます。</li>
+</ul>
+</li>
+<li>Intents<ul>
+<li>ユーザのしゃべりそうな内容のパターン（「サンプル発話」と言います）をグループ（「インテント」と言います）にまとめることで、分岐の元となるルールを作ります。</li>
+</ul>
+</li>
+<li>Slots<ul>
+<li>ユーザのしゃべる内容の中に含まれるキーワードを変数として、スキルからプログラム的に利用する場合に使用します。（今回は使用しません）</li>
+</ul>
+</li>
+</ul>
+<p>といっても、いきなりではピンとこないですよねー。では実際に設定してみましょう！</p>
+<p>Intentsタブをクリックして、&#34;Add Intent&#34;をクリックしてください。</p>
+<p class="image-container"><img alt="story02-025" src="img/8aa55a66979fd70e.png"></p>
+<p>下に&#34;intent_one&#34;という設定が追加されたと思います。&#34;intent_one&#34;がインテント名になります。まずここで、&#34;intent_one&#34;というのをわかりやすく&#34;momotaro_intent&#34;に変えてください。</p>
+<p class="image-container"><img alt="story02-026" src="img/3c014e8e81366ce4.png"></p>
+<p>入力欄に「桃太郎」と入力してENTERキーを押します。入力欄の下に表示されればOKです！</p>
+<p class="image-container"><img alt="story02-027" src="img/7d88d41f08d06208.png"></p>
+<p>同様にして、以下のように入力してみてください。</p>
+<p class="image-container"><img alt="story02-028" src="img/facac7d92343c82d.png"></p>
+<p>これで1つ目のインテントの登録が完了しました。これを繰り返して、&#34;cinderella_intent&#34;と&#34;gulliver_intent&#34;を作ります。ここは説明を省略します。下にコピペ用のテキストを用意してみたので、トライしてみてください！</p>
+<ul>
+<li>cinderella_intent<pre><code>シンデレラ
+シンデレラが聞きたい
+シンデレラを聞かせて
+シンデレラがいいな
+シンデレラをお願い
+</code></pre>
+</li>
+<li>gulliver_intent<pre><code>ガリバーの冒険
+ガリバーの冒険が聞きたい
+ガリバーの冒険を聞かせて
+ガリバーの冒険がいいな
+ガリバーの冒険をお願い
+</code></pre>
+</li>
+</ul>
+<p>全部入力し終わってこんな感じになっていればOKです！</p>
+<p class="image-container"><img alt="story02-029" src="img/a48f91083011763b.png"></p>
+<p>では、次にこのインテントを使って分岐をしてみましょう。Choicesタブをクリックして、&#34;Add Choice&#34;をクリックしてください。</p>
+<p class="image-container"><img alt="story02-030" src="img/6d2790142a8f86f3.png"></p>
+<p>すると下に設定項目のようなものが追加されるとともに、Interaction Blockにも線をつなぐための四角が追加されて、同じ番号になっているのがわかるでしょうか？</p>
+<p class="image-container"><img alt="story02-031" src="img/7d2ddb1c1d2bf230.png"></p>
+<p>同じように&#34;Add Choice&#34;をあと2回クリックしてみてください。さらに2つの設定項目と、Block側にも2つの四角が追加されます。</p>
+<p class="image-container"><img alt="story02-032" src="img/bedd0cf2d9368fab.png"></p>
+<p>では設定項目の&#34;Select Intent&#34;をクリックしてみてください。先程作成した３つのインテントが並んでいるのがみえますよね？</p>
+<p class="image-container"><img alt="story02-033" src="img/94015c809f4b2b0b.png"></p>
+<p>それ以外にも色々表示されていますが、そこはちょっと置いといて。3つのインテントをそれぞれ以下のように選択してみてください。</p>
+<p class="image-container"><img alt="story02-033" src="img/7ea35b1530636753.png"></p>
 
 
       </google-codelab-step>
