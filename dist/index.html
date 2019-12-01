@@ -134,7 +134,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="いろいろなブロック" duration="0">
+      <google-codelab-step label="Alexaに発話させる、ユーザの発話を受け取る" duration="0">
         <p>ここで少し最初に使ったブロックの説明をしながら、他のブロックもご紹介します。</p>
 <h2 is-upgraded>Speak Block</h2>
 <p>最初に使ったSpeak Blockは、皆さんもうおわかりのように「アレクサがしゃべる」ブロックになります。</p>
@@ -204,7 +204,123 @@
 <p>では設定項目の&#34;Select Intent&#34;をクリックしてみてください。先程作成した３つのインテントが並んでいるのがみえますよね？</p>
 <p class="image-container"><img alt="story02-033" src="img/94015c809f4b2b0b.png"></p>
 <p>それ以外にも色々表示されていますが、そこはちょっと置いといて。3つのインテントをそれぞれ以下のように選択してみてください。</p>
-<p class="image-container"><img alt="story02-033" src="img/7ea35b1530636753.png"></p>
+<ul>
+<li>1番目に &#34;momotaro_intent&#34; を設定</li>
+<li>2番目に &#34;cinderella_intent&#34; を設定</li>
+<li>3番目に &#34;gulliver_intent&#34; を設定</li>
+</ul>
+<p class="image-container"><img alt="story02-034" src="img/e3bec27f946e9c7e.png"></p>
+<p>さらにSpeak Blockを３つならべて、Interaction Blockの1〜3番とそれぞれ線でつなげます。</p>
+<p class="image-container"><img alt="story02-035" src="img/c7a8db18ef0148a2.png"></p>
+<p>それぞれのSpeak Blockは、以下のように設定します。</p>
+<p>1番目の &#34;momotaro_intent&#34; につながっているSpeak Blockには</p>
+<pre><code>わかりました。では今日のお話は、桃太郎。
+</code></pre>
+<p class="image-container"><img alt="story02-036" src="img/a2d0f7d0f2cc02af.png"></p>
+<p>2番目の &#34;cinderella_intent&#34; につながっているSpeak Blockには</p>
+<pre><code>わかりました。では今日のお話は、シンデレラ。
+</code></pre>
+<p class="image-container"><img alt="story02-037" src="img/cba49f3eba21eda7.png"></p>
+<p>3番目の &#34;gulliver_intent&#34; につながっているSpeak Blockには</p>
+<pre><code>わかりました。では今日のお話は、ガリバーの冒険。
+</code></pre>
+<p class="image-container"><img alt="story02-038" src="img/ba46775baefb50b.png"></p>
+<p>3つとも設定ができたら、ここで一度アップロードしてテストしてみましょう。&#34;Upload to Alexa&#34;をクリックして、開発者コンソールを開きます。</p>
+<p class="image-container"><img alt="story02-039" src="img/c963816c69b49f81.png"></p>
+<p>ではテストです。「世界の音絵本を開いて」でスキルを起動したあと、どの物語を選ぶかを聞いてきますので、聞きたい物語を言ってみてください。終わったら再度スキルを起動して今度は違う物語に変えて試してみてください。きちんとそれぞれの物語になっていることがわかりますか？</p>
+<p class="image-container"><img alt="story02-040" src="img/59d4d03213150d9e.png"><img alt="story02-041" src="img/5cb4369f696586ec.png"><img alt="story02-042" src="img/19001f9e7ecb19e7.png"></p>
+<p>もうおわかりになられたかと思いますが、Interaction Blockでユーザの発話をそれぞれのインテントに紐付けて、そのインテントごとに分岐を分けることで、会話のフローが分岐するという仕組みになっているのです。</p>
+<p>このようにして、物語のところどころでユーザの発話に応じて話が展開するインタラクティブなストーリーが作れるというわけですね！是非積極的に使ってなれていきましょう！</p>
+<p>さて・・・これ、気になった方もいらっしゃるかと思います。</p>
+<p class="image-container"><img alt="story02-043" src="img/673c2c367a2ee67e.png"></p>
+<p>この&#34;Else&#34;というのは、用意されているインテントのどれにも合致しない場合に使います。例えば今回だと、桃太郎、シンデレラ、ガリバーの冒険、「以外」のお話をユーザが行った場合などですね。こういう場合は、ユーザに対して、そのお話に対応していないことを伝えて、再度お話を選び直してもらうようにしましょう。</p>
+<p>Speak Blockを配置して、以下のようにたすき掛けになるように線をつなげてみてください。</p>
+<p class="image-container"><img alt="story02-044" src="img/b4d4ea1b72e17c01.png"></p>
+<p>Speak Blockの設定は以下のように入力します。</p>
+<pre><code>ごめんなさい、ただしく聞き取れませんでした。今お話できるのは、桃太郎、シンデレラ、ガリバーの冒険、の３つです。３つのどれを聞きたいですか？
+</code></pre>
+<p class="image-container"><img alt="story02-045" src="img/b63df812df71ded5.png"></p>
+<p>これでOKです！テストでうまく動いていることを確認してください。</p>
+<p class="image-container"><img alt="story02-046" src="img/8111c84ab51084a4.png"></p>
+<aside class="warning"><p>まれにうまく聞き取ってもらえずに間違ったインテントに紐付けられてしまう場合があります。これはアレクサがなるべく用意されているインテントに紐付けようとしてしまうためです。特に、インテントに設定されているユーザの発話パターン、サンプル発話の数が少ない、サンプル発話が１語など短すぎる場合に発生します。なのでなるべくたくさんのサンプル発話を登録することをおすすめします。</p>
+</aside>
+<p>他にも発話を受け取る方法はありますが、後ほど説明します。</p>
+<p>Nextをクリックしてください。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="効果音やサウンドを使う" duration="0">
+        <p>物語に大事なのは臨場感ですよね！サウンドを効果的に使うことでスキルを楽しいものにすることができます。そしてAlexaやVoiceflowでもサウンドを使ったスキルを作ることができます!ここではサウンドの使い方をトライしてみましょう！</p>
+<p>サウンドの使い方は以下の３つです。</p>
+<ol type="1">
+<li>「Alexa Skills Kitサウンドライブラリ」を使う</li>
+<li>mp3ファイルをVoiceflowにアップロードする</li>
+<li>mp3ファイルのURLを指定する</li>
+</ol>
+<p>順に見てきましょう。</p>
+<h2 is-upgraded>Alexa Skills Kitサウンドライブラリ</h2>
+<p>Alexaでのスキル開発に活用しやすいように、予めサウンドや効果音が多数公開されています。それが「Alexa Skills Kitサウンドライブラリ」です。</p>
+<p>以下のURLをクリックしてみてください。<br><a href="https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html</a></p>
+<p>少し下に、検索できるような場所があるのがわかるでしょうか？</p>
+<p class="image-container"><img alt="story02-047" src="img/c321760f2c41c7c5.png"></p>
+<p>ここで、「すべて」をクリックするとカテゴリーが選べます。試しに一番下にある「魔法の呪文」というのを選んでみてください。</p>
+<p class="image-container"><img alt="story02-048" src="img/29a1b6ba95e9a8b9.png"></p>
+<aside class="special"><p>検索キーワードを直接入力して検索することも可能です。</p>
+</aside>
+<p>魔法の呪文カテゴリーのサウンドの一覧が表示されます。さらに「妖精の効果音（キラキラ）」というのをクリックしてみてください。</p>
+<p class="image-container"><img alt="story02-049" src="img/70086f6e4df5eac3.png"></p>
+<p>再生ボタンを押すとサウンドを聞くことができますので、このようにしてお好みのサウンドを探していきます。で、実際にスキルで使うには、この中に表示されているSSMLタグというのが必要になります。SSMLタグは、Alexaにしゃべらせたいテキストに含めると特別に解釈してくれる命令のようなものだと思ってください。ここの横にある&#34;Copy to clipboard&#34;をクリックして、コピーします。</p>
+<p class="image-container"><img alt="story02-050" src="img/dc04a28dd82e6799.png"></p>
+<p>Voiceflowに戻って、「シンデレラ」のフローのSpeak Blockの設定の一番最後でペースト(WindowsはCtrl+v, Macはcommand+v)してください。これで発話のあとにサウンドが再生されるようになります。</p>
+<p class="image-container"><img alt="story02-051" src="img/d6c4b43ab543a018.png"></p>
+<p>テストは後でまとめてやりましょう。次のサウンド再生の方法についてご紹介します。</p>
+<aside class="special"><p>SSMLを使うと、サウンドを再生させるだけでなく、Alexaの話すスピードや音程を変えたり、Alexaの話す内容を調整したりすることできます。ぜひ活用してみてください。<br><br>音声合成マークアップ言語（SSML）のリファレンス<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html</a></p>
+</aside>
+<h2 is-upgraded>mp3ファイルをVoiceflowにアップロードする</h2>
+<p>Alexa Skills Kitサウンドライブラリは種類も豊富でコピペするだけで使えるので非常にお手軽なんですが、例えば、</p>
+<ul>
+<li>自分で作った音声ファイルなどを使いたい</li>
+<li>フリーの音声ファイルなどを使いたい</li>
+<li>サウンドライブラリに適当なものがない</li>
+</ul>
+<p>という場合もあるかと思います。そんな場合に手元にmp3ファイルがあれば、それをVoiceflowにアップロードすることもできます。早速やってみましょう。</p>
+<p>今回はサンプルとして多数の効果音素材を公開されている「効果音ラボ」様のものを使用させてもらいましょう。</p>
+<aside class="warning"><p>素材を使用してスキルを作成する場合、素材提供元サイトの規約等を必ず確認の上ご利用いただくようお願いたします。</p>
+</aside>
+<ul>
+<li>以下のURLをクリックしてみてください。<br><a href="https://soundeffect-lab.info/" target="_blank">https://soundeffect-lab.info/</a></li>
+<li>右上に検索フォームがあるので「和太鼓」と入力して検索してみてください。</li>
+<li>検索結果に表示された「和太鼓でドドン」というサウンドをダウンロードします。</li>
+</ul>
+<p>では、Voiceflowにファイルをアップロードしてみましょう。</p>
+<p>「桃太郎」のフローのSpeak Blockの設定を開いて、&#34;Audio&#34;と書かれたボタンをクリックします。</p>
+<p class="image-container"><img alt="story02-052" src="img/83fbf714aaf8852f.png"></p>
+<p>Audioの設定項目が下に追加されます。ここに先程ダウンロードしてきたmp3ファイルをドラッグ＆ドロップしてみてください。</p>
+<p class="image-container"><img alt="story02-053" src="img/f6255b23b084b45c.png"></p>
+<p>アップロードが完了しました。かんたんですね！なお、再生ボタンをクリックするとサウンドを再生することができます。</p>
+<p class="image-container"><img alt="story02-054" src="img/52846e038d388894.png"></p>
+<h2 is-upgraded>mp3ファイルのURLを指定する</h2>
+<p>これはあまり活用するケースはないかもですが、一応ご紹介。以下のようなケースには使う場合もあるかと思います。</p>
+<ul>
+<li>Voiceflowにアップロードできるmp3ファイルのサイズには制限（10MB）があるため、これよりも大きなファイルサイズのものを使いたい</li>
+<li>Voiceflowにmp3ファイルをアップロードすると実は裏側でAlexaで使える形式に変換してくれるのですが、まれにこれがうまく行かない場合がある</li>
+<li>複数のスキルで同じサウンドを使っていて共有したい。</li>
+</ul>
+<p>こういった場合には、自分でどこかのレンタルサーバ等においたmp3ファイルを使うことも可能です。ただし色々と条件が厳しくなりますので参考程度に覚えていただければと思います。</p>
+<p>ではやってみましょう。「ガリバーの冒険」のフローのSpeak Blockの設定を開いて、&#34;Audio&#34;と書かれたボタンをクリックします。</p>
+<p class="image-container"><img alt="story02-055" src="img/e098a2742096a188.png"></p>
+<p>先ほどと同じようにAudioの設定項目が下に追加されます。ここで&#34;Add URL&#34;をクリックします。</p>
+<p class="image-container"><img alt="story02-056" src="img/96fb6d08fb60706c.png"></p>
+<p>今回はサンプルでファイルを用意しました。以下のURLを入力して、&#34;Confirm&#34;ボタンをクリックしてください。</p>
+<pre><code>https://dl.dropboxusercontent.com/s/7s498p67ytd4yar/sea-storm.mp3
+</code></pre>
+<p class="image-container"><img alt="story02-057" src="img/b971472abad9470a.png"></p>
+<p>アップロードが完了しました。再生ボタンをクリックするとサウンドを再生することができます。</p>
+<p class="image-container"><img alt="story02-058" src="img/dcd6c689c3f43835.png"></p>
+<p>３つとも設定ができましたので、Alexa開発者コンソールでテストしてみましょう。&#34;Upload to Alexa&#34;ボタンをクリックして開発者コンソールでテストしてみてください。ちゃんとサウンドが再生されていればオッケーです！</p>
+<p>このようにサウンドを追加することでスキルがにぎやかなものになります！特に物語的なスキルを作る場合には必須になると思いますので、ぜひ工夫・活用してみてください。</p>
+<p>Nextをクリックしてください。</p>
 
 
       </google-codelab-step>
