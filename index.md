@@ -5,7 +5,7 @@ id: dist
 {{if .Meta.Author}}author: {{.Meta.Author}}{{end}}
 {{if .Meta.Categories}}categories: {{commaSep .Meta.Categories}}{{end}}
 {{if .Meta.Tags}}tags: {{commaSep .Meta.Tags}}{{end}}
-{{if .Meta.Feedback}}feedback link: {{.Meta.Feedback}}{{end}}
+feedback link: https://github.com/kun432/voiceflow-handson-story/issues
 {{if .Meta.GA}}analytics account: {{.Meta.GA}}{{end}}
 
 ---
