@@ -478,6 +478,10 @@ https://dl.dropboxusercontent.com/s/7s498p67ytd4yar/sea-storm.mp3
 
 このようにサウンドを追加することでスキルがにぎやかなものになります！特に物語的なスキルを作る場合には必須になると思いますので、ぜひ工夫・活用してみてください。
 
+Negative
+: 自分で用意したmp3ファイルをURLで指定する場合、いろいろな条件が必要となります。詳しくは以下をご覧ください。
+[https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio](https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio)
+
 Nextをクリックしてください。
 
 
