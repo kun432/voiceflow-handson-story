@@ -495,7 +495,7 @@
 </aside>
 <aside class="warning"><p>「舞踏会に行きたい」以外のセリフを言っても、「舞踏会に行きたい」と解釈される場合があります。Alexaはサンプル発話の内容を元にユーザの発話がどのインテントに紐付いているかを推測してくれますが、内容まできっちり正確に認識できるわけではありませんし、そのためには多数のサンプル発話が必要になります。正確に認識するためには多数のサンプル発話を用意する必要があるということを覚えておいてください。</p>
 </aside>
-<p>もうおわかりになられたかと思いますが、Interaction Blockでユーザの発話をそれぞれのインテントに紐付けて、そのインテントごとに分岐を分けることで、会話のフローが分岐するという仕組みになっているのです。</p>
+<p>もうおわかりになられたかと思いますが、Interaction Blockでユーザの発話をインテントに紐付けて、インテントごとに分岐を分けることで、会話のフローが分岐するという仕組みになっているのです。今回はインテントが一つしかないので、そのインテント以外か、</p>
 <p>このようにして、物語のところどころでユーザの発話に応じて話が展開するインタラクティブなストーリーが作れるというわけですね！是非積極的に使ってなれていきましょう！</p>
 <p>さて・・・これ、気になった方もいらっしゃるかと思います。</p>
 <p class="image-container"><img alt="story02-043" src="img/673c2c367a2ee67e.png"></p>
@@ -508,82 +508,6 @@
 <p class="image-container"><img alt="story02-045" src="img/b63df812df71ded5.png"></p>
 <p>これでOKです！テストでうまく動いていることを確認してください。</p>
 <p class="image-container"><img alt="story02-046" src="img/8111c84ab51084a4.png"></p>
-<aside class="warning"><p>まれにうまく聞き取ってもらえずに間違ったインテントに紐付けられてしまう場合があります。これはアレクサがなるべく用意されているインテントに紐付けようとしてしまうためです。特に、インテントに設定されているユーザの発話パターン、サンプル発話の数が少ない、サンプル発話が１語など短すぎる場合に発生します。なのでなるべくたくさんのサンプル発話を登録することをおすすめします。</p>
-</aside>
-<p>他にも発話を受け取る方法はありますが、後ほど説明します。</p>
-<p>Nextをクリックしてください。</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="効果音やサウンドを使う" duration="0">
-        <p>物語に大事なのは臨場感ですよね！サウンドを効果的に使うことでスキルを楽しいものにすることができます。そしてAlexaやVoiceflowでもサウンドを使ったスキルを作ることができます!ここではサウンドの使い方をトライしてみましょう！</p>
-<p>サウンドの使い方は以下の３つです。</p>
-<ol type="1">
-<li>「Alexa Skills Kitサウンドライブラリ」を使う</li>
-<li>mp3ファイルをVoiceflowにアップロードする</li>
-<li>mp3ファイルのURLを指定する</li>
-</ol>
-<p>順に見てきましょう。</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="おまけ） Alexa Skills Kitサウンドライブラリ" duration="0">
-        <aside class="special"><p>SSMLを使うと、サウンドを再生させるだけでなく、Alexaの話すスピードや音程を変えたり、Alexaの話す内容を調整したりすることできます。ぜひ活用してみてください。<br><br>音声合成マークアップ言語（SSML）のリファレンス<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html</a></p>
-</aside>
-<h2 is-upgraded>mp3ファイルをVoiceflowにアップロードする</h2>
-<p>Alexa Skills Kitサウンドライブラリは種類も豊富でコピペするだけで使えるので非常にお手軽なんですが、例えば、</p>
-<ul>
-<li>自分で作った音声ファイルなどを使いたい</li>
-<li>フリーの音声ファイルなどを使いたい</li>
-<li>サウンドライブラリに適当なものがない</li>
-</ul>
-<p>という場合もあるかと思います。そんな場合に手元にmp3ファイルがあれば、それをVoiceflowにアップロードすることもできます。早速やってみましょう。</p>
-<p>今回はサンプルとして多数の効果音素材を公開されている「効果音ラボ」様のものを使用させてもらいましょう。</p>
-<aside class="warning"><p>素材を使用してスキルを作成する場合、素材提供元サイトの規約等を必ず確認の上ご利用いただくようお願いたします。</p>
-</aside>
-<ul>
-<li>以下のURLをクリックしてみてください。<br><a href="https://soundeffect-lab.info/" target="_blank">https://soundeffect-lab.info/</a></li>
-<li>右上に検索フォームがあるので「和太鼓」と入力して検索してみてください。</li>
-<li>検索結果に表示された「和太鼓でドドン」というサウンドをダウンロードします。</li>
-</ul>
-<p>では、Voiceflowにファイルをアップロードしてみましょう。</p>
-<p>「桃太郎」のフローのSpeak Blockの設定を開いて、&#34;Audio&#34;と書かれたボタンをクリックします。</p>
-<p class="image-container"><img alt="story02-052" src="img/83fbf714aaf8852f.png"></p>
-<p>Audioの設定項目が下に追加されます。ここに先程ダウンロードしてきたmp3ファイルをドラッグ＆ドロップしてみてください。</p>
-<p class="image-container"><img alt="story02-053" src="img/f6255b23b084b45c.png"></p>
-<p>アップロードが完了しました。かんたんですね！なお、再生ボタンをクリックするとサウンドを再生することができます。</p>
-<p class="image-container"><img alt="story02-054" src="img/52846e038d388894.png"></p>
-<h2 is-upgraded>mp3ファイルのURLを指定する</h2>
-<p>これはあまり活用するケースはないかもですが、一応ご紹介。以下のようなケースには使う場合もあるかと思います。</p>
-<ul>
-<li>Voiceflowにアップロードできるmp3ファイルのサイズには制限（10MB）があるため、これよりも大きなファイルサイズのものを使いたい</li>
-<li>Voiceflowにmp3ファイルをアップロードすると実は裏側でAlexaで使える形式に変換してくれるのですが、まれにこれがうまく行かない場合がある</li>
-<li>複数のスキルで同じサウンドを使っていて共有したい。</li>
-</ul>
-<p>こういった場合には、自分でどこかのレンタルサーバ等においたmp3ファイルを使うことも可能です。ただし色々と条件が厳しくなりますので参考程度に覚えていただければと思います。</p>
-<p>ではやってみましょう。「ガリバーの冒険」のフローのSpeak Blockの設定を開いて、&#34;Audio&#34;と書かれたボタンをクリックします。</p>
-<p class="image-container"><img alt="story02-055" src="img/e098a2742096a188.png"></p>
-<p>先ほどと同じようにAudioの設定項目が下に追加されます。ここで&#34;Add URL&#34;をクリックします。</p>
-<p class="image-container"><img alt="story02-056" src="img/96fb6d08fb60706c.png"></p>
-<p>今回はサンプルでファイルを用意しました。以下のURLを入力して、&#34;Confirm&#34;ボタンをクリックしてください。</p>
-<pre><code>https://dl.dropboxusercontent.com/s/7s498p67ytd4yar/sea-storm.mp3
-</code></pre>
-<p class="image-container"><img alt="story02-057" src="img/b971472abad9470a.png"></p>
-<p>アップロードが完了しました。再生ボタンをクリックするとサウンドを再生することができます。</p>
-<p class="image-container"><img alt="story02-058" src="img/dcd6c689c3f43835.png"></p>
-<p>３つとも設定ができましたので、Alexa開発者コンソールでテストしてみましょう。&#34;Upload to Alexa&#34;ボタンをクリックして開発者コンソールでテストしてみてください。ちゃんとサウンドが再生されていればオッケーです！</p>
-<p>このようにサウンドを追加することでスキルがにぎやかなものになります！特に物語的なスキルを作る場合には必須になると思いますので、ぜひ工夫・活用してみてください。</p>
-<aside class="warning"><p>自分で用意したmp3ファイルをURLで指定する場合、いろいろな条件が必要となります。詳しくは以下をご覧ください。<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio</a></p>
-</aside>
-<p>Nextをクリックしてください。</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="フラグの立て方" duration="0">
-        <p>ではストーリーを作っていきましょう。ストーリーを作るのに</p>
 
 
       </google-codelab-step>
