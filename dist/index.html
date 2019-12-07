@@ -51,7 +51,31 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="プロジェクトの作成と基本操作" duration="0">
+      <google-codelab-step label="本日作っていただくスキル" duration="0">
+        <p>本日皆さんに作っていただくスキルは「シンデレラ」のお話です。</p>
+<p class="image-container"><img alt="cinderella" src="img/72d12672b1f8f499.png"></p>
+<p>皆さんもよくご存知のこのストーリーを以下のような工夫をすることで、楽しくインタラクティブなAlexaスキルにします。</p>
+<ul>
+<li>サウンドや効果音をたくさん使ってにぎやかな感じにします。</li>
+<li>登場人物のキャラクターごとに声を使い分けます。</li>
+<li>単にお話を聞くだけではなくて、ユーザの発話を元にストーリーが進んだり分岐したりします。</li>
+</ul>
+<p>スキルの全体はこういう感じになっています。</p>
+<p class="image-container"><img alt="story01-001" src="img/35f507202f00abc.png"></p>
+<ul>
+<li>全８シーンで構成されています。</li>
+<li>ブロックの数は多いですが、使っているブロックの種類は少ないです。</li>
+<li>スムーズに進むようにコピペ用テキストを用意してます。</li>
+<li>ポイントとなるところは詳しく説明します。</li>
+<li>ご自宅に帰ってから実際に動かしてみたり、中身を確認できるように完成したものをダウンロードできるようにしておきます。</li>
+</ul>
+<p>ボリュームありますが、がんばっていきましょう！</p>
+<p>Nextをクリックしてください。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="プロジェクトの作成" duration="0">
         <h2 is-upgraded>プロジェクトの作成</h2>
 <p>最初にプロジェクトを作成して、かんたんにVoiceflowの画面の説明を行います。</p>
 <p>以下のURLにアクセスしてください。<br><a href="https://voiceflow.com/" target="_blank">https://voiceflow.com/</a></p>
@@ -64,7 +88,7 @@
 <p>プロジェクト作成画面が開きますので、以下の通り設定して、最後に&#34;Create Project&#34;をクリックします。</p>
 <ul>
 <li>プロジェクト名<ul>
-<li>今回は「世界の音絵本」と入力してください。</li>
+<li>今回は「世界のおとえほん」と入力してください。</li>
 <li>スキルを呼び出すときのデフォルトの名前になります。（例：「アレクサ、◯◯◯を開いて」）</li>
 <li>後でプロジェクト名と呼び出し名のそれぞれを変更することも可能です。</li>
 </ul>
@@ -83,29 +107,36 @@
 </ul>
 <p class="image-container"><img alt="story02-005" src="img/3dd575c47266eb21.png"></p>
 <p>では早速やってみましょう。</p>
-<h2 is-upgraded>CANVASとBlockの使い方</h2>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="シーン０: 基本操作" duration="0">
+        <h2 is-upgraded>CANVASとBlock</h2>
 <p>Voiceflowでは、いろんな機能を持ったBlockをCanvasに配置して線をつなぐことで、会話の流れを作ることになります。試しに少しやってみましょう。</p>
 <p>左のBlocksメニューの一番上にある&#34;Speak&#34;というブロックを、最初から配置してあるHome Blockの右側あたりにドラッグ＆ドロップで配置してください。すると、画面の右側に別の設定画面が出てくると思います。</p>
 <p class="image-container"><img alt="story02-006" src="img/4c537c010a645c14.png"></p>
 <p>この設定画面の右上の入力欄に以下と入力してみてください。</p>
-<pre><code>世界の音絵本にようこそ。このスキルでは、世界の有名な童話を楽しくお話します。
+<pre><code>世界のおとえほんにようこそ。このスキルでは、世界の有名な童話を楽しくおはなしします。
 </code></pre>
-<p class="image-container"><img alt="story02-007" src="img/6beb5afff6e305b4.png"></p>
+<p class="image-container"><img alt="story02-007" src="img/a22c09d8e6e10189.png"></p>
 <p>そして、Home BlockのStartの右端からSpeak Blockの左端までドラッグしながら線でつなげます。</p>
-<p class="image-container"><img alt="story02-008" src="img/48d5665f5c37cdf.png"></p>
+<p class="image-container"><img alt="story02-008" src="img/a9339e64bec0bf82.png"></p>
 <p>はい、これが基本的な操作になります。かんたんですよね？おさらいでもう一つSpeak Blockをつなげてみましょう。</p>
 <ul>
 <li>最初に配置したSpeak Blockの右側にもう一つSpeak Blockを配置します。</li>
-<li>Speak Blockの設定画面の入力欄に以下を入力します<br><code>桃太郎、シンデレラ、ガリバーの冒険、のどれを聞きたいですか？</code></li>
+<li>Speak Blockの設定画面の入力欄に以下を入力します<pre><code>では今日のお話は、シンデレラ。
+</code></pre>
+</li>
 <li>Speak Block同士を線でつなげます。</li>
 </ul>
-<p class="image-container"><img alt="story02-009" src="img/43ab257db3c17297.png"></p>
+<p class="image-container"><img alt="story02-009" src="img/f72726f84e1e82dd.png"></p>
 <p>２回目なのでもう大丈夫ですよね。ちなみに、線を引き直したい場合は、線の始点側のブロックの四角をクリックするか、線の真ん中にカーソルを合わせると表示されるバケツアイコンをクリックすると消せます。</p>
 <p class="image-container"><img alt="story02-009_2" src="img/9741aaf54c28b633.png"></p>
 <p>では作ったスキルを実際に動かしてみたいと思います。</p>
 <h2 is-upgraded>スキルのアップロードとテスト</h2>
 <p>作成したスキルを動かすにはAlexa開発者コンソールへのアップロードが必要です。右上の&#34;Upload to Alexa&#34;というボタンをクリックしてください。</p>
-<p class="image-container"><img alt="story02-010" src="img/f6038f09942289be.png"></p>
+<p class="image-container"><img alt="story02-010" src="img/803ea3ac114b6893.png"></p>
 <p>初回に限り、VoiceflowアカウントとAlexa開発者アカウントの紐付けが必要になります。&#34;Connect Amazon&#34;ボタンをクリックしてください。</p>
 <p class="image-container"><img alt="story02-011" src="img/cb85e89627022ee.png"></p>
 <p>Amazonアカウントのログイン画面が出てきますので、お持ちのAmazonアカウントでログインします。</p>
@@ -125,34 +156,289 @@
 <p>テストは文字だけでなく音声でも行なえます。まず最初にマイクを有効にしておきましょう。「許可」をクリックします。</p>
 <p class="image-container"><img alt="story02-018" src="img/707dbd0117faacfa.png"></p>
 <p>ではいよいよテストです。「日本語」が選択されていることを確認して、マイクアイコンをクリックしたままマイクに「音絵本を開いて」と話しかけて、話し終わったら話してみてください。パソコンにマイクがない場合は、キーボードから入力してENTERキーを押してください。</p>
-<p class="image-container"><img alt="story02-020" src="img/dc1f179853a97fa3.png"></p>
+<p class="image-container"><img alt="story02-020" src="img/d0866908f0ebc9d1.png"></p>
 <p>あなたの発話に対して、Voiceflowで設定した内容をAlexaが返してくれればテストは成功です！これでスキル開発の第一歩を踏み出したことになります！おめでとうございます！</p>
-<p class="image-container"><img alt="story02-021" src="img/a0b9d0fd38d2bd00.png"></p>
-<p>このように、Voiceflowでスキルを作成 → Alexa開発者コンソールにアップロード → Alexa開発者コンソールでテスト、というのがVoiceflowでのスキル開発の流れになります。どうでしょうか？そんなに難しくないですよね？この調子で続けていきましょう！</p>
+<p class="image-container"><img alt="story02-021" src="img/691b0d8f9f7059ac.png"></p>
+<p>このように、Voiceflowでスキルを作成 → Alexa開発者コンソールにアップロード → Alexa開発者コンソールでテスト、というのがVoiceflowでのスキル開発の流れになります。</p>
+<h2 is-upgraded>効果音やサウンドを使う（その１）</h2>
+<p>物語に大事なのは臨場感ですよね！サウンドを効果的に使うことでスキルを楽しいものにすることができます。そしてAlexaやVoiceflowでもサウンドを使ったスキルを作ることができます!ここではサウンドの使い方にトライしてみましょう！</p>
+<p>サウンドの使い方は以下の３通りがあります。</p>
+<ol type="1">
+<li>「Alexa Skills Kitサウンドライブラリ」を使う</li>
+<li>mp3ファイルをVoiceflowにアップロードする</li>
+<li>mp3ファイルのURLを指定する</li>
+</ol>
+<p>ここでは、２番めのmp3ファイルアップロードやってみましょう。</p>
+<h2 is-upgraded>mp3ファイルをVoiceflowにアップロードする</h2>
+<p>自分で作成した効果音や、フリーで配布されているmp3ファイルなどをアップロードして、スキル内で再生することができます。今回はサンプルとして多数の効果音素材を公開されている「効果音ラボ」様のものを使用させてもらいましょう。</p>
+<aside class="warning"><p>素材を使用してスキルを作成する場合、素材提供元サイトの規約等を必ず確認の上ご利用いただくようお願いたします。</p>
+</aside>
+<ul>
+<li>以下のURLをクリックしてみてください。<br><a href="https://soundeffect-lab.info/sound/anime/" target="_blank">https://soundeffect-lab.info/sound/anime/</a></li>
+<li>上記ページにある「きらきら輝く５」をダウンロードしてください。</li>
+</ul>
+<p>ではアップロードしましょう。２番めのSpeak Blockの設定を開いて、先程入力した発話の下にある&#34;Audio&#34;をクリックしてください。</p>
+<p class="image-container"><img alt="story01-002" src="img/c7c3c3067972edef.png"></p>
+<p>オーディオの設定が表示されますので、先ほどダウンロードしてきたmp3ファイルを、図の四角の中にドラッグ＆ドロップします。</p>
+<p class="image-container"><img alt="story01-003" src="img/a3090e3af2c1ffbb.png"></p>
+<p>以下のように表示されれば正しくアップロードされています。再生ボタンを押すとその場で聞けます。</p>
+<p class="image-container"><img alt="story01-004" src="img/d8f780b354ab1b90.png"></p>
+<p>はい、ではアップロードして確認してみてください。Alexaが話したあとに効果音が聞こえてくればオッケーです！かんたんですね！</p>
+<p>これでシーン０は終了です。次のシーンに行きましょう！</p>
 <p>&#34;Next&#34;をクリックしてください</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Alexaに発話させる、ユーザの発話を受け取る" duration="0">
-        <p>ここで少し最初に使ったブロックの説明をしながら、他のブロックもご紹介します。</p>
-<h2 is-upgraded>Speak Block</h2>
-<p>最初に使ったSpeak Blockは、皆さんもうおわかりのように「アレクサがしゃべる」ブロックになります。</p>
-<p class="image-container"><img alt="story02-007" src="img/6beb5afff6e305b4.png"></p>
-<p>&#34;Speaking as&#34;の横のリストを変更すると、他の声に変更することができます。日本語はアレクサの他に、&#34;Mizuki&#34;（女性）、&#34;Takumi&#34;（男性）の声を選ぶことができます。物語に複数のキャラクターが出てくる場合などに活用できそうですね！</p>
-<p class="image-container"><img alt="story02-022" src="img/1f1e9f43afb1fac6.png"></p>
-<aside class="special"><p>ちなみに外国人の声を選ぶとカタコトの日本語みたいになって面白いです。外国人が日本に来た、みたいなシチュエーションで使うのも面白いかもしれません。</p>
+      <google-codelab-step label="シーン１: 複数のキャラクターの会話" duration="0">
+        <p>さぁ、ここからはいよいよ、物語を作っていきましょう。シーン１のイメージはこんな感じです。</p>
+<pre><code>むかしむかし、あるところにシンデレラというとても美しくて優しい娘がいました。シンデレラの両親は早くに亡くなってしまったので、今は継母と二人のお姉さんと暮らしていました。ところが、この人たちは大変な意地悪で、
+
+お姉さん１
+「シンデレラ、さっさと掃除を終わらせなさいよ。」
+お姉さん２
+「シンデレラ、掃除が終わったら次は洗濯よ、怠けないでやるのよ。」
+
+シンデレラに家事を全部押しつけた上、
+
+ママ母
+「ふん、あんたにはこのボロがお似合いだわ。」
+
+と、粗末な服しか与えてもらえず、シンデレラは毎日つらい日々を送っていました。
+
+そんなある日の事、お城の王子様がお妃選びの舞踏会を開く事になり、シンデレラのお姉さんたちにも招待状が届きました。お姉さんたちは大はしゃぎできれいなドレスに着替えて準備をしています。
+
+ママ母
+「そうそう、シンデレラ、あんたも仕事が終われば、舞踏会に来てもいいわ、ただそのボロボロの服でも来れるなら、だけどね。あっはっは。」
+
+そう言い残して、お母さんとお姉さんたちはでかけていきました。
+
+シンデレラ
+「ああ、わたしも舞踏会に行きたいわ。でもこんなボロボロの服じゃとても王子さまにお会いできないわ、しくしく」
+</code></pre>
+<h2 is-upgraded>声を変える</h2>
+<p>ではやっていきましょう。</p>
+<p>Speak Blockをおいて以下のように入力します。</p>
+<pre><code>むかしむかし、あるところにシンデレラというとても美しくて優しい娘がいました。シンデレラの両親は早くに亡くなってしまったので、今は継母と二人のお姉さんと暮らしていました。ところが、この人たちは大変な意地悪で、
+</code></pre>
+<p class="image-container"><img alt="story01-005" src="img/998c8f52aadd60d3.png"></p>
+<p>次はセリフです。Alexaスキルでは、何も設定しなければ&#34;Alexa&#34;という名前の女性の声で喋りますが、この声を変えることができます。早速やってみましょう！</p>
+<p>&#34;Speech&#34; をクリックします。</p>
+<p class="image-container"><img alt="story01-006" src="img/3cc777686966be73.png"></p>
+<p>すると新しい入力欄が下に出てきますので、以下のように入力してください</p>
+<pre><code>シンデレラ、さっさと掃除を終わらせなさいよ。
+</code></pre>
+<p class="image-container"><img alt="story01-007" src="img/648b904b12fce36f.png"></p>
+<p>そして、&#34;Speaking as&#34; の右側のリストから &#34;Mizuki&#34; というのを選択してください。</p>
+<p class="image-container"><img alt="story01-008" src="img/842fa5b3ab16a2d0.png"></p>
+<p>これでアップロードして試してみてください。声が変わっているのがわかりますか？</p>
+<p>このように、声を使い分けることでキャラクターごとにセリフを分けることができます。ちなみに、日本語の場合は、</p>
+<ul>
+<li>Alexa（標準・女性の声）</li>
+<li>Mizuki（女性の声）</li>
+<li>Takumi（男性の声）</li>
+</ul>
+<p>から選択することができます。</p>
+<aside class="warning"><p>外国人の声を選ぶこともできますが、その場合、日本語を正しく発音してくれるかどうかは保証されません。外国人の声で外国語を話させる場合にはSSMLという言語を使って、どの言語を話すか？をきちんと指定するのが本来のやり方になります。（SSMLについては後ですこし説明しますが、外国語を話すための設定について今回は説明しません）</p>
 </aside>
-<aside class="warning"><p>ただし、外国人の声を選んだ場合、日本語を正しく発音してくれるかどうかは保証されません。今回は説明しませんが、外国人の声で外国語を話させる場合にはSSMLというタグを使って、どの言語を話すか？をきちんと指定するのが本来のやり方になります。</p>
+<h2 is-upgraded>声の音程とスピードを変える</h2>
+<p>でもちょっとまってください。シンデレラに出てくる登場人物を考えてみましょう。</p>
+<ul>
+<li>シンデレラ</li>
+<li>ママ母</li>
+<li>お姉さんその１</li>
+<li>お姉さんその２</li>
+<li>魔法使いのおばあさん</li>
+<li>お城の王子様</li>
+<li>ナレーター</li>
+</ul>
+<p>合計７人もいます。音声の切り替えで対応できるのは３人です。あと４人足りませんね・・・・</p>
+<p>そんな場合は、声の音程やスピードを変えることで分けてみましょう。「SSML」という、HTMLに似た言語を使うことで「喋り方」を調節することができます。早速やってみましょう。</p>
+<p>先程のセリフ部分を以下に置き換えてください。</p>
+<pre><code>&lt;prosody pitch=&#34;x-high&#34; rate=&#34;fast&#34;&gt;シンデレラ、さっさと掃除を終わらせなさいよ。&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-009" src="img/589b298ccc3c8f3a.png"></p>
+<p>発話部分を<code>&lt;prosody&gt;</code>と<code>&lt;/prosody&gt;</code>で囲むと、囲んだ部分の発話内容が調節されます。調節する内容は最初の<code>&lt;prosody&gt;</code>内に指定します。<code>pitch</code>で声の高さ、<code>rate</code>で声のスピードを調整できます。</p>
+<p>これと最初の音声切り替えを組み合わせることで、複数のキャラクターのセリフを使い分けることができます！今回はこんな感じで各登場人物の声を設定することにします。</p>
+<table>
+<tr></tr>
+<tr><td colspan="1" rowspan="1"><p><strong>登場人物</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>音声</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>音程</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>スピード</strong></p>
+</td><td colspan="1" rowspan="1"><p><strong>SSMLタグ</strong></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>ナレーター</em></p>
+</td><td colspan="1" rowspan="1"><p>Alexa</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>シンデレラ</em></p>
+</td><td colspan="1" rowspan="1"><p>Alexa</p>
+</td><td colspan="1" rowspan="1"><p>高い</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p><code>&lt;prosody pitch=&#34;x-high&#34;&gt;&lt;/prosody&gt;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>ママ母</em></p>
+</td><td colspan="1" rowspan="1"><p>Mizuki</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>お姉さん1</em></p>
+</td><td colspan="1" rowspan="1"><p>Mizuki</p>
+</td><td colspan="1" rowspan="1"><p>高い</p>
+</td><td colspan="1" rowspan="1"><p>やや速い</p>
+</td><td colspan="1" rowspan="1"><p><code>&lt;prosody pitch=&#34;x-high&#34; rate=&#34;fast&#34;&gt;&lt;/prosody&gt;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>お姉さん2</em></p>
+</td><td colspan="1" rowspan="1"><p>Mizuki</p>
+</td><td colspan="1" rowspan="1"><p>低い</p>
+</td><td colspan="1" rowspan="1"><p>ややゆっくり</p>
+</td><td colspan="1" rowspan="1"><p><code>&lt;prosody pitch=&#34;x-low&#34; rate=&#34;slow&#34;&gt;&lt;/prosody&gt;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>魔法使い</em></p>
+</td><td colspan="1" rowspan="1"><p>Alexa</p>
+</td><td colspan="1" rowspan="1"><p>低い</p>
+</td><td colspan="1" rowspan="1"><p>ややゆっくり</p>
+</td><td colspan="1" rowspan="1"><p><code>&lt;prosody pitch=&#34;x-high&#34; rate=&#34;slow&#34;&gt;&lt;/prosody&gt;</code></p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p><em>王子様</em></p>
+</td><td colspan="1" rowspan="1"><p>Takumi</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>デフォルト</p>
+</td><td colspan="1" rowspan="1"><p>-</p>
+</td></tr>
+</table>
+<p>ではセリフをも含めてこのシーンの設定をしていきましょう。</p>
+<p>&#34;Speech&#34;をクリックして新しい入力欄を追加、お姉さん２のセリフなので、音声は&#34;Mizuki&#34;を選択、発話は以下を入力します。</p>
+<pre><code>&lt;prosody pitch=&#34;x-low&#34; rate=&#34;slow&#34;&gt;シンデレラ、掃除が終わったら次は洗濯よ、怠けないでやるのよ。&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-011" src="img/908cf5aabb50d61.png"></p>
+<p>さらに&#34;Speech&#34;をクリックして、ナレーターなので特に設定せずに、以下を入力。</p>
+<pre><code>シンデレラに家事を全部押しつけた上、
+</code></pre>
+<p class="image-container"><img alt="story01-012" src="img/cf6b968ff07a6678.png"></p>
+<p>次はママ母のセリフです。&#34;Speech&#34;を追加して、&#34;Mizuki&#34;を選択して以下を入力します。</p>
+<pre><code>ふん、あんたにはこのボロがお似合いだわ。
+</code></pre>
+<p class="image-container"><img alt="story01-013" src="img/1aeb12f975314b71.png"></p>
+<p>最後もナレーターなので、&#34;Speech&#34;を追加して、ナレーターなので特に設定せずに、以下を入力。</p>
+<pre><code>と、粗末な服しか与えてもらえず、シンデレラは毎日つらい日々を送っていました。&lt;break time=&#34;1s&#34;/&gt;。
+</code></pre>
+<p class="image-container"><img alt="story01-014" src="img/9eb6b2e6b2903496.png"></p>
+<p>最後に見慣れないSSMLタグが出てきましたが、これもSSMLタグの一つで、発話の中に何も言わない時間を含めるのに使います。このあと少し話が変わるので、場面の切り替わり的に1秒の空白を入れています。</p>
+<p>では続きです。ここで話が少し変わるので、もう一つSpeakブロックを追加して、そちらに設定していきましょう。</p>
+<pre><code>そんなある日の事、お城の王子様がお妃選びの舞踏会を開く事になり、シンデレラのお姉さんたちにも招待状が届きました。お姉さんたちは大はしゃぎできれいなドレスに着替えて準備をしています。
+</code></pre>
+<p class="image-container"><img alt="story01-017" src="img/84ceb07420a94a0f.png"></p>
+<p>&#34;Speech&#34;で、ママ母のセリフを追加します。</p>
+<pre><code>そうそう、シンデレラ、あんたも仕事が終われば、舞踏会に来てもいいわ、ただそのボロボロの服でも来れるなら、だけどね。あっはっは。&lt;/say-as&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-018" src="img/3108b43dce130a02.png"></p>
+<p>もう一つ&#34;Speech&#34;で、以下を入力します。</p>
+<pre><code>そう言い残して、お母さんとお姉さんたちはでかけていきました。
+</code></pre>
+<p class="image-container"><img alt="story01-019" src="img/e6888ef19c87ad4.png"></p>
+<p>最後にシンデレラのセリフです。シンデレラの声はAlexaのままですが、声を高くします。あと、このあと別のシーンに切り替わるので、<code>&lt;break time=&#34;1s&#34;/&gt;</code> も追加しておきましょう。</p>
+<pre><code>&lt;prosody pitch=&#34;x-high&#34;&gt;ああ、わたしも舞踏会に行きたいわ。でもこんなボロボロの服じゃとても王子さまに、お会いできないわ、しくしく&lt;/prosody&gt;&lt;break time=&#34;1s&#34;/&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-020" src="img/21cf7726e633a7d6.png"></p>
+<p>アップロードしてテストしたいところですが、次のステップをやったあとでテストしましょう。</p>
+<h2 is-upgraded>効果音やサウンドを使う（その２）</h2>
+<p>効果音やサウンドについては、mp3ファイルをアップする方法を説明しましたが、SSMLでも効果音やサウンドを指定することができます。</p>
+<p>そこで活用したいのは「Alexa Skills Kitサウンドライブラリ」です！ Alexaでのスキル開発に活用しやすいように、予めサウンドや効果音が多数公開されています。</p>
+<p>以下のURLをクリックしてみてください。<br><a href="https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html</a></p>
+<p>少し下に、検索できるような場所があるのがわかるでしょうか？</p>
+<p class="image-container"><img alt="story02-047" src="img/c321760f2c41c7c5.png"></p>
+<p>ここに「ドア」と入力してENTERキーを押すと検索結果が表示されます。ドアだけでたくさんありますね！どれでもいいのですが、今回は「木（２）」というのを使いますので、これをクリックしてみてください。</p>
+<p class="image-container"><img alt="story02-048" src="img/4c478efb3e3a0c04.png"></p>
+<p>再生ボタンを押すとサウンドを聞くことができますので、このようにしてお好みのサウンドを探していきます。で、実際にスキルで使うには、この中に表示されているSSMLタグを発話煮含める必要があります。ここの横にある&#34;Copy to clipboard&#34;をクリックして、コピーします。</p>
+<p class="image-container"><img alt="story02-049" src="img/35e7b56c4b2a0e6.png"></p>
+<p>Voiceflowに戻って、Speak Blockの以下の設定の最後にペースト(WindowsはCtrl+v, Macはcommand+v)してください。これで発話のあとにサウンドが再生されるようになります。</p>
+<p class="image-container"><img alt="story01-021" src="img/ec18f7f80b4eddc3.png"></p>
+<p>はい、ではいよいよアップロードボタンをクリックしてテストです。キャラクターごとに声やしゃべり方が違って、ドアを閉める音が聞こえれば、シーン1は完成です！</p>
+<p>Nextをクリックして次のシーンに行きましょう！</p>
+<h2 is-upgraded>おまけ： 発話の中に空白を入れる</h2>
+<p>何回か出てきた、<code>&lt;break time=&#34;1s&#34;/&gt;</code>、発話の中に何も言わない時間を含めるのに使います。</p>
+<p class="image-container"><img alt="story01-015" src="img/77f8b1ad75663434.png"></p>
+<p>というのも、Alexaは句読点（、とか。）があれば、その部分をきちんと意識して読み上げてくれますが、発話中に長めの空白を入れたい場合に「・・・」と入力しても理解してくれません。そこで意図的に空白を入れたい場合は、SSMLのbreakタグを使用します。例えば、</p>
+<p>「マヤ・・・なんて恐ろしい子」</p>
+<p>と言わせたい場合は以下のようにします。</p>
+<pre><code>マヤ&lt;break time=&#34;0.5s&#34;/&gt;なんて恐ろしい子
+</code></pre>
+<p>どれぐらい空白時間を入れるかは <code>time=&#34;&#34;</code> に秒で設定します。例えば、1秒の場合は &#34;1s&#34; となります。また、prosodyタグと違って、breakタグは閉じるタグが必要がないこと、最後に/がつくのを忘れないように、注意してください。</p>
+<p>また、Voiceflowで、Speak Blockをいくつか並べた場合、Blockとしては複数に分かれていたとしても、Alexaが発話するときは一気に話されますので、シーンが変わるような場合にはどこかにbreakタグを入れておくと良いと思います。</p>
+<p class="image-container"><img alt="story01-016" src="img/d70fb65d14c801c.png"></p>
+<aside class="special"><p>このSpeak Blockをいくつ並べても、Alexaは一気に発話する、というのはとても重要です。あとで説明しますので、ここではそういうものだと覚えておいてください。</p>
 </aside>
-<p>その他、Speak Blockでは、サウンドを再生させることもできますが、それは後で説明します。</p>
-<h2 is-upgraded>Interaction Block</h2>
-<p>アレクサにしゃべらせることができたら、次は、ユーザがしゃべったことを受け取ってみるのにチャレンジしましょう。ユーザの発話を受け取るブロックは複数ありますが、もっとも活用の幅が広いInteraction Blockを使ってみましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="シーン2: ユーザの発話を受け取りと分岐" duration="0">
+        <p>では次のシーンです。シーン２のイメージはこんな感じです。</p>
+<pre><code>シンデレラを舞踏会に連れて行ってあげたいですか？連れて行ってあげたい場合は、シンデレラになりきって、舞踏会に行きたいわ、と言ってください。
+
+ユーザ
+「舞踏会に行きたいわ」
+
+（効果音: 魔法の音）
+
+シンデレラが強く願うと、その瞬間、突然、魔法使いのおばあさんが目の前に現れ、こういいました。
+
+魔法使いのおばあさん
+「泣くのはおよし、シンデレラ。お前はいつも仕事をがんばるとても良い子じゃ、ごほうびにわたしが魔法で舞踏会へ行かせてあげるとしよう。」
+
+シンデレラ
+「本当に？」
+
+魔法使いのおばあさん
+「本当じゃよ。見ててご覧。」
+
+魔法を使ってシンデレラを変身させるには、ちちんぷいぷい、か、アブラカダブラ、といってください。
+
+（ユーザの発話内容で分岐）
+
+→ユーザ「ちちんぷいぷい」と言った場合、
+
+　魔法使いのおばあさん
+　「ちちんぷいぷい、えいっ。」
+
+→ユーザ「アブラカダブラ」と言った場合、
+
+　魔法使いのおばあさん
+　「アブラカダブラ、えいっ。」
+
+そういって、魔法使いのおばあさんは魔法の杖を一振りしました。
+
+（効果音：シャラリーン）
+
+すると、畑のかぼちゃが豪華な馬車に、屋根裏のネズミが立派な白馬に、庭のトカゲがパリッとした御者になりました。シンデレラの着ていたみすぼらしい服も、たちまち輝く様な純白の美しいドレスに変わり、そして足元は素敵なガラスのクツになりました。
+
+シンデレラ
+「まあ、なんてすてきなの。」
+
+魔法使いのおばあさん
+「さあ、楽しんでおいでシンデレラ。でも、わたしの魔法は十二時までしか続かないから、それまでに帰ってくるんじゃよ。」
+
+シンデレラ
+「わかったわ、おばあさん、ありがとう、行ってきます。」
+
+（効果音：馬車の音）
+</code></pre>
+<p>ちょっとボリュームがありますが、がんばっていきましょう！</p>
+<h2 is-upgraded>ユーザの発話を受け取る</h2>
+<p>このシーンでは、ユーザの発話を受け取って、ストーリーが分岐して進む、というのをやってみましょう！</p>
+<p>まず、最初にSpeak Blockで、これからユーザに発話させるのを促す内容を話させます。シーンが変わるので少し離した場所に配置しておくのをおすすめします。</p>
+<pre><code>シンデレラを舞踏会に連れて行ってあげたいですか？連れて行ってあげたい場合は、シンデレラになりきって、舞踏会に行きたいわ、と言ってください。
+</code></pre>
+<p class="image-container"><img alt="story01-022" src="img/4441674b7c2c81c8.png"></p>
+<p>次はいよいよユーザの発話の受け取りです。ユーザの発話を受け取るブロックは複数ありますが、もっとも活用の幅が広いInteraction Blockを使いましょう。</p>
 <p>Blocksメニューの下の方にAdvancedというサブメニューの中ににある Interaction Block を、2つ目のSpeak Blockの右側にドラッグアンドドロップして、線でつなげてください。</p>
-<p class="image-container"><img alt="story02-023" src="img/d658fa8285f386c9.png"></p>
-<p>Speak Blockのときと同じようにInteraction Blockの設定画面も表示されましたよね。Interaction Blockの設定画面に3つのタブがあるのがわかるでしょうか？</p>
-<p class="image-container"><img alt="story02-024" src="img/2b673c07b7d62d9d.png"></p>
-<p>それぞれのタブで設定する内容は以下となります。</p>
+<p class="image-container"><img alt="story01-023" src="img/8780e4f1f6a60c8b.png"></p>
+<p>Interaction Blockの設定は３つあり、タブで切り替えて設定します。それぞれのタブで設定する内容は以下となります。</p>
 <ul>
 <li>Choices<ul>
 <li>Intentsで設定したインテントに基づいて、会話の流れを分岐させます。</li>
@@ -163,72 +449,52 @@
 </ul>
 </li>
 <li>Slots<ul>
-<li>ユーザのしゃべる内容の中に含まれるキーワードを変数として、スキルからプログラム的に利用する場合に使用します。（今回は使用しません）</li>
+<li>ユーザのしゃべる内容の中に含まれるキーワード（「スロット」と言います）を変数として、スキルからプログラム的に利用する場合に使用します。</li>
 </ul>
 </li>
 </ul>
-<p>といっても、いきなりではピンとこないですよねー。では実際に設定してみましょう！</p>
-<p>Intentsタブをクリックして、&#34;Add Intent&#34;をクリックしてください。</p>
-<p class="image-container"><img alt="story02-025" src="img/8aa55a66979fd70e.png"></p>
-<p>下に&#34;intent_one&#34;という設定が追加されたと思います。&#34;intent_one&#34;がインテント名になります。まずここで、&#34;intent_one&#34;というのをわかりやすく&#34;momotaro_intent&#34;に変えてください。</p>
-<p class="image-container"><img alt="story02-026" src="img/3c014e8e81366ce4.png"></p>
-<p>入力欄に「桃太郎」と入力してENTERキーを押します。入力欄の下に表示されればOKです！</p>
-<p class="image-container"><img alt="story02-027" src="img/7d88d41f08d06208.png"></p>
-<p>同様にして、以下のように入力してみてください。</p>
-<p class="image-container"><img alt="story02-028" src="img/facac7d92343c82d.png"></p>
-<p>これで1つ目のインテントの登録が完了しました。これを繰り返して、&#34;cinderella_intent&#34;と&#34;gulliver_intent&#34;を作ります。ここは説明を省略します。下にコピペ用のテキストを用意してみたので、トライしてみてください！</p>
-<ul>
-<li>cinderella_intent<pre><code>シンデレラ
-シンデレラが聞きたい
-シンデレラを聞かせて
-シンデレラがいいな
-シンデレラをお願い
+<p>といっても、ピンとこないと思うので、実際にやってみましょう。まず最初に&#34;Slots&#34;タブをクリックして、&#34;+ Add slots&#34;</p>
+<p>次にIntentsタブをクリックして、&#34;+Add Intent&#34;をクリックします。</p>
+<p class="image-container"><img alt="story01-024" src="img/87b1fdd3972a85c6.png"></p>
+<p>下に&#34;intent_one&#34;という設定が追加されたと思います。&#34;intent_one&#34;の部分がインテント名になります。</p>
+<p class="image-container"><img alt="story01-025" src="img/3ca80520c9b6de22.png"></p>
+<p>ちょっとわかりにくいので、まずここで、&#34;intent_one&#34;というのをわかりやすく&#34;butoukai_intent&#34;に変えてください。</p>
+<p class="image-container"><img alt="story01-026" src="img/69340f9e36730309.png"></p>
+<p>そして、入力欄に「舞踏会に行きたいわ」と入力してENTERキーを押します。入力欄の下に表示されればOKです！</p>
+<p class="image-container"><img alt="story01-027" src="img/88015bff2777d4ed.png"></p>
+<p>同様にして、以下をすべて入力します。</p>
+<pre><code>舞踏会に行きたい
+舞踏会行きたい
+舞踏会行きたいわ
+舞踏会に行きたいな
+舞踏会行きたいな
 </code></pre>
-</li>
-<li>gulliver_intent<pre><code>ガリバーの冒険
-ガリバーの冒険が聞きたい
-ガリバーの冒険を聞かせて
-ガリバーの冒険がいいな
-ガリバーの冒険をお願い
-</code></pre>
-</li>
-</ul>
 <p>全部入力し終わってこんな感じになっていればOKです！</p>
-<p class="image-container"><img alt="story02-029" src="img/a48f91083011763b.png"></p>
+<p class="image-container"><img alt="story01-028" src="img/f99d9292c3d5c3a7.png"></p>
 <p>では、次にこのインテントを使って分岐をしてみましょう。Choicesタブをクリックして、&#34;Add Choice&#34;をクリックしてください。</p>
 <p class="image-container"><img alt="story02-030" src="img/6d2790142a8f86f3.png"></p>
 <p>すると下に設定項目のようなものが追加されるとともに、Interaction Blockにも線をつなぐための四角が追加されて、同じ番号になっているのがわかるでしょうか？</p>
 <p class="image-container"><img alt="story02-031" src="img/7d2ddb1c1d2bf230.png"></p>
-<p>同じように&#34;Add Choice&#34;をあと2回クリックしてみてください。さらに2つの設定項目と、Block側にも2つの四角が追加されます。</p>
-<p class="image-container"><img alt="story02-032" src="img/bedd0cf2d9368fab.png"></p>
-<p>では設定項目の&#34;Select Intent&#34;をクリックしてみてください。先程作成した３つのインテントが並んでいるのがみえますよね？</p>
-<p class="image-container"><img alt="story02-033" src="img/94015c809f4b2b0b.png"></p>
-<p>それ以外にも色々表示されていますが、そこはちょっと置いといて。3つのインテントをそれぞれ以下のように選択してみてください。</p>
-<ul>
-<li>1番目に &#34;momotaro_intent&#34; を設定</li>
-<li>2番目に &#34;cinderella_intent&#34; を設定</li>
-<li>3番目に &#34;gulliver_intent&#34; を設定</li>
-</ul>
-<p class="image-container"><img alt="story02-034" src="img/e3bec27f946e9c7e.png"></p>
-<p>さらにSpeak Blockを３つならべて、Interaction Blockの1〜3番とそれぞれ線でつなげます。</p>
-<p class="image-container"><img alt="story02-035" src="img/c7a8db18ef0148a2.png"></p>
-<p>それぞれのSpeak Blockは、以下のように設定します。</p>
-<p>1番目の &#34;momotaro_intent&#34; につながっているSpeak Blockには</p>
-<pre><code>わかりました。では今日のお話は、桃太郎。
+<p>では設定項目の&#34;Select Intent&#34;をクリックしてください。先程作成した&#34;butoukai_intent&#34;が並んでいるのが見えると思うので、これを選択します。</p>
+<p class="image-container"><img alt="story02-033" src="img/f7fd28b889a679cb.png"></p>
+<p>次にSpeak Blockを２つ、以下のように配置してください。</p>
+<p class="image-container"><img alt="story02-034" src="img/acdea8bc50d96ae8.png"></p>
+<p>そして、以下のように線を引きます。1と書かれたところからは右のSpeak Blockへ、elseと書かれたところは上のSpeak Blockにつなげて、そこからさらにInteraction Blockに戻します。</p>
+<p class="image-container"><img alt="story02-035" src="img/5d4d18fc80b8cf83.png"></p>
+<p>それぞれのSpeak Blockは、以下のように設定します。まず、elseにつながった上のSpeak Block。</p>
+<pre><code>ごめんなさい。うまく聞き取れませんでした。シンデレラを舞踏会に連れていってあげるには、舞踏会に行きたい、と言ってください。
 </code></pre>
-<p class="image-container"><img alt="story02-036" src="img/a2d0f7d0f2cc02af.png"></p>
-<p>2番目の &#34;cinderella_intent&#34; につながっているSpeak Blockには</p>
-<pre><code>わかりました。では今日のお話は、シンデレラ。
+<p class="image-container"><img alt="story02-036" src="img/8efa3c29848cd445.png"></p>
+<p>次に、1につながった右のSpeak Block。最初にSSMLでサウンドを流していますね。</p>
+<pre><code>&lt;audio src=&#34;soundbank://soundlibrary/magic/amzn_sfx_fairy_melodic_chimes_01&#34;/&gt;シンデレラが強く願うと、その瞬間、突然、魔法使いのおばあさんが目の前に現れ、こういいました。
 </code></pre>
-<p class="image-container"><img alt="story02-037" src="img/cba49f3eba21eda7.png"></p>
-<p>3番目の &#34;gulliver_intent&#34; につながっているSpeak Blockには</p>
-<pre><code>わかりました。では今日のお話は、ガリバーの冒険。
-</code></pre>
-<p class="image-container"><img alt="story02-038" src="img/ba46775baefb50b.png"></p>
-<p>3つとも設定ができたら、ここで一度アップロードしてテストしてみましょう。&#34;Upload to Alexa&#34;をクリックして、開発者コンソールを開きます。</p>
-<p class="image-container"><img alt="story02-039" src="img/c963816c69b49f81.png"></p>
-<p>ではテストです。「世界の音絵本を開いて」でスキルを起動したあと、どの物語を選ぶかを聞いてきますので、聞きたい物語を言ってみてください。終わったら再度スキルを起動して今度は違う物語に変えて試してみてください。きちんとそれぞれの物語になっていることがわかりますか？</p>
+<p class="image-container"><img alt="story02-037" src="img/7de9e826e804a0ae.png"></p>
+<p>2つとも設定ができたら、ここで一度アップロードしてテストしてみましょう。スキルを起動したあと、舞踏会に行きたい、と言うように言われるので、最初に「舞踏会に行きたい」以外のセリフを言って、その後で「舞踏会に行きたい」と言ってください。きちんとそれぞれ分岐していることが確認できるでしょうか？</p>
 <p class="image-container"><img alt="story02-040" src="img/59d4d03213150d9e.png"><img alt="story02-041" src="img/5cb4369f696586ec.png"><img alt="story02-042" src="img/19001f9e7ecb19e7.png"></p>
+<aside class="special"><p>テストするときに全部の発話を聞く必要はありません。スキルが起動してすぐに「舞踏会に行きたい」と言うと、途中は飛ばしてその部分からスタートします。</p>
+</aside>
+<aside class="warning"><p>「舞踏会に行きたい」以外のセリフを言っても、「舞踏会に行きたい」と解釈される場合があります。Alexaはサンプル発話の内容を元にユーザの発話がどのインテントに紐付いているかを推測してくれますが、内容まできっちり正確に認識できるわけではありませんし、そのためには多数のサンプル発話が必要になります。正確に認識するためには多数のサンプル発話を用意する必要があるということを覚えておいてください。</p>
+</aside>
 <p>もうおわかりになられたかと思いますが、Interaction Blockでユーザの発話をそれぞれのインテントに紐付けて、そのインテントごとに分岐を分けることで、会話のフローが分岐するという仕組みになっているのです。</p>
 <p>このようにして、物語のところどころでユーザの発話に応じて話が展開するインタラクティブなストーリーが作れるというわけですね！是非積極的に使ってなれていきましょう！</p>
 <p>さて・・・これ、気になった方もいらっしゃるかと思います。</p>
@@ -259,23 +525,12 @@
 <li>mp3ファイルのURLを指定する</li>
 </ol>
 <p>順に見てきましょう。</p>
-<h2 is-upgraded>Alexa Skills Kitサウンドライブラリ</h2>
-<p>Alexaでのスキル開発に活用しやすいように、予めサウンドや効果音が多数公開されています。それが「Alexa Skills Kitサウンドライブラリ」です。</p>
-<p>以下のURLをクリックしてみてください。<br><a href="https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/ask-soundlibrary.html</a></p>
-<p>少し下に、検索できるような場所があるのがわかるでしょうか？</p>
-<p class="image-container"><img alt="story02-047" src="img/c321760f2c41c7c5.png"></p>
-<p>ここで、「すべて」をクリックするとカテゴリーが選べます。試しに一番下にある「魔法の呪文」というのを選んでみてください。</p>
-<p class="image-container"><img alt="story02-048" src="img/29a1b6ba95e9a8b9.png"></p>
-<aside class="special"><p>検索キーワードを直接入力して検索することも可能です。</p>
-</aside>
-<p>魔法の呪文カテゴリーのサウンドの一覧が表示されます。さらに「妖精の効果音（キラキラ）」というのをクリックしてみてください。</p>
-<p class="image-container"><img alt="story02-049" src="img/70086f6e4df5eac3.png"></p>
-<p>再生ボタンを押すとサウンドを聞くことができますので、このようにしてお好みのサウンドを探していきます。で、実際にスキルで使うには、この中に表示されているSSMLタグというのが必要になります。SSMLタグは、Alexaにしゃべらせたいテキストに含めると特別に解釈してくれる命令のようなものだと思ってください。ここの横にある&#34;Copy to clipboard&#34;をクリックして、コピーします。</p>
-<p class="image-container"><img alt="story02-050" src="img/dc04a28dd82e6799.png"></p>
-<p>Voiceflowに戻って、「シンデレラ」のフローのSpeak Blockの設定の一番最後でペースト(WindowsはCtrl+v, Macはcommand+v)してください。これで発話のあとにサウンドが再生されるようになります。</p>
-<p class="image-container"><img alt="story02-051" src="img/d6c4b43ab543a018.png"></p>
-<p>テストは後でまとめてやりましょう。次のサウンド再生の方法についてご紹介します。</p>
-<aside class="special"><p>SSMLを使うと、サウンドを再生させるだけでなく、Alexaの話すスピードや音程を変えたり、Alexaの話す内容を調整したりすることできます。ぜひ活用してみてください。<br><br>音声合成マークアップ言語（SSML）のリファレンス<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="おまけ） Alexa Skills Kitサウンドライブラリ" duration="0">
+        <aside class="special"><p>SSMLを使うと、サウンドを再生させるだけでなく、Alexaの話すスピードや音程を変えたり、Alexaの話す内容を調整したりすることできます。ぜひ活用してみてください。<br><br>音声合成マークアップ言語（SSML）のリファレンス<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html</a></p>
 </aside>
 <h2 is-upgraded>mp3ファイルをVoiceflowにアップロードする</h2>
 <p>Alexa Skills Kitサウンドライブラリは種類も豊富でコピペするだけで使えるので非常にお手軽なんですが、例えば、</p>
@@ -323,6 +578,12 @@
 <aside class="warning"><p>自分で用意したmp3ファイルをURLで指定する場合、いろいろな条件が必要となります。詳しくは以下をご覧ください。<br><a href="https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio" target="_blank">https://developer.amazon.com/ja/docs/custom-skills/speech-synthesis-markup-language-ssml-reference.html#audio</a></p>
 </aside>
 <p>Nextをクリックしてください。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="フラグの立て方" duration="0">
+        <p>ではストーリーを作っていきましょう。ストーリーを作るのに</p>
 
 
       </google-codelab-step>
