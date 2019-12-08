@@ -57,13 +57,17 @@ Positive
 
 ![story01-001](images/story01-001.png)
 
-- 全８シーンで構成されています。
-- ブロックの数は多いですが、使っているブロックの種類は少ないです。
-- スムーズに進むようにコピペ用テキストを用意してます。
+- 物語部分は全4シーンで構成されています。時間の関係上、本来の「シンデレラ」よりも短くしています。
+- 可能な限り、スムーズに進むようにコピペ用テキストを用意してます。
 - ポイントとなるところは詳しく説明します。
 - ご自宅に帰ってから実際に動かしてみたり、中身を確認できるように完成したものをダウンロードできるようにしておきます。
 
-ボリュームありますが、がんばっていきましょう！
+### 注意
+
+Negative
+: このスキルを審査・公開しないようにお願いします。今後のワークショップで使えなくなってしまいます。
+
+では、がんばっていきましょう！
 
 Nextをクリックしてください。
 
@@ -782,8 +786,240 @@ Negative
 
 では、シーン３にいきましょう！Nextをクリックしてください。
 
-## シーン3: 音楽を使う場合の制限、特別なインテント Yes/No
+## シーン3: 特別なインテント Yes/No と、サウンドを使う場合の注意
+
+では次のシーンです。シーン3のイメージはこんな感じです。
+
+```
+（効果音：人がしゃべる音）
+
+お城についたシンデレラが、大広間に現れると、そのあまりの美しさに気づいた王子様がシンデレラの前に進み出ました。
+
+王子さま
+「美しいお嬢さん、ぼくと、踊っていただけませんか？」
+
+王子様と踊りますか？はい、か、いいえ、で答えてください。
+
+ユーザ
+「はい」
+
+シンデレラ
+「ええ、よろこんで」
+
+（効果音：ワルツ）
+
+シンデレラと王子様は時間を忘れてダンスを楽しみました。シンデレラはとても幸せでした。
+
+（効果音：鐘の音）
+
+シンデレラ
+「あっ、いけない。もうすぐ12時だわ。すぐに帰らないと魔法が溶けちゃう。どうしよう？」
+```
+
+今までやってきたことでほぼ実現できますね！では順にやっていきましょう。
+
+Speak Blockをおいて、どんどん設定してきます。
+
+```
+<audio src="soundbank://soundlibrary/voices/crowds/crowds_04"/>お城についたシンデレラが、大広間に現れると、そのあまりの美しさに気づいた王子様がシンデレラの前に進み出ました。
+```
+
+![story01-046](images/story01-046.png)
+
+王子さま、初登場のセリフです。
+
+```
+美しいお嬢さん、ぼくと、踊っていただけませんか？<break time="1s"/>
+```
+
+![story01-047](images/story01-047.png)
+
+Speak Blockをもう一つつなげます。
+
+```
+王子様と踊りますか？はい、か、いいえ、で答えてください。
+```
+
+![story01-048](images/story01-048.png)
+
+### 特別なインテント Yes/No
+
+ここで、ユーザに踊りますか？と聞いて、発話を受け取るので、ここまでで何度か出てきたInteraction Blockを使います。で、ここまで学んだことを踏まえると、こうなると思いますよね？
+
+はい、と、いいえ、のインテントを作って・・・
+
+![story01-049](images/story01-049.png)
+
+それぞれのインテントをフローで分ける。
+
+![story01-050](images/story01-050.png)
+
+ところが、これ不要なんです！
+
+Alexaにおいて「はい」と「いいえ」は特別な意味を持っていて、予めインテントが用意されています。このように最初から用意されているインテントを「ビルトインインテント」と言い、十分なサンプル発話も登録されているので、スキル開発する側からすると、単にそれを使うだけで良しなにやってくれるという、とても便利で楽ちんなものなんです。
+
+では早速やってみましょう。
+
+Interaction BlockをSpeak Blockにつなげます。で、Choicesタブが選択されているので、そのまま"+ Add Choice"します。
+
+![story01-051](images/story01-051.png)
+
+リストの中に”NoIntent"があるのが見えますか？これを選択します。
+
+![story01-052](images/story01-052.png)
+
+同様にして”YesIntent"も追加します。
+
+![story01-053](images/story01-053.png)
+
+これだけです。かんたんでしょ？はい、いいえ、を使う場合には、YesIntent/NoIntentを使う、それ以外の複雑な発話の受け取りは自分で作る、と覚えてもらえればよいかと思います。
+
+Positive
+: YesIntent／NoIntent以外にもビルトインインテントはありますので、興味があれば調べてみてください。
+標準ビルトインインテント
+[https://developer.amazon.com/ja/docs/custom-skills/standard-built-in-intents.html](https://developer.amazon.com/ja/docs/custom-skills/standard-built-in-intents.html)
+
+では、はい、いいえ、の分岐を作っていきます。Speak Blockを2つおいて、以下のように線を引いてください。YesIntentが右に、Noとelseが上に繋がって、再度Interactionに戻る感じです。
+
+![story01-054](images/story01-054.png)
+
+上のSpeak Blockには以下のように設定します。はい、と言わない限り進めない感じ、王室の圧力を感じますねｗ
+
+```
+そんなことを言わないでください。僕はひと目見てあなたの美しさの虜になってしまったのです。
+```
+
+```
+王子様と踊りますか？はい、か、いいえ、で答えてください。
+```
+
+![story01-055](images/story01-055.png)
+
+はい、と答えた場合の右のSpeak Blockはこんな感じです。
+
+```
+<prosody pitch="x-high">ええ、よろこんで。</prosody>
+```
+
+![story01-056](images/story01-056.png)
+
+ということで、ここからダンスが始まります。ダンスにふさわしいmp3ファイルをアップロードしましょう。
+今回は、フリーBGM素材サイト「DOVA−SYNDROME」様にアップされている、shimtone様の「ぽかぽかワルツ」を使用させていただきます。
+
+[https://dova-s.jp/bgm/play10492.html](https://dova-s.jp/bgm/play10492.html)
+
+Negative
+: 素材を使用してスキルを作成する場合、素材提供元サイトの規約等を必ず確認の上ご利用いただくようお願いたします。
+
+"Audio"をクリックして、mp3ファイルをアップロードします。
+
+![story01-057](images/story01-057.png)
+
+はい、続きを設定して行きます。鐘の音が聞こえてきましたね・・・
+
+```
+シンデレラと王子様は時間を忘れてダンスを楽しみました。シンデレラはとても幸せでした。<break time="0.7s"/><audio src="soundbank://soundlibrary/bell/church/church_bells_02"/>
+```
+
+![story01-058](images/story01-058.png)
+
+```
+<prosody pitch="x-high">あっ、いけない。もうすぐ12時だわ。すぐに帰らないと魔法が解けちゃう。どうしよう？</prosody>
+```
+
+![story01-059](images/story01-059.png)
+
+はい、これで、シーン３は完成です。いよいよ運命の決断、って感じですね！次はいよいよ最後のシーンです！
+
+その前に、大事なことを一つだけお話しておきます。
+
+### サウンド・効果音を使う場合の制約
+
+これまでなんの気なしにサウンドや効果音を使っていますが、とても大事なお約束があります。サウンドや効果音を使う場合、
+
+- Alexaからの１回の発話で使用できるサウンドや効果音は５回まで。
+- Alexaからの１回の発話で使用できるサウンドや効果音の合計再生時間は240秒まで。
+
+これ、どういうことか見てみましょう。シーン２とシーン３のところを見てください。
+
+![story01-060](images/story01-060.png)
+
+Alexaの１回の発話というのは、ユーザの発話に囲まれた間のことを指しています。以前に、Speak Blockを分けて並べても、全て一気に話されるというお話をしましたよね？つまり、ユーザの発話と発話の間に入れれるサウンドや効果音の利用回数や合計再生時間には上限があるので、これを超えてたくさんのサウンド・効果音を使いたい場合は、必ずユーザの発話を定期的に入れる必要があるということなんですね。これはSSMLで入れる場合もmp3ファイルでアップロードする場合も変わりません。
+
+先程のシーンの中で音楽ファイルが使われている箇所を見てみましょう。
+
+![story01-061](images/story01-061.png)
+
+音楽ファイルが使われている箇所は２回で、どちらも短いものなので、問題ありません。ただ、物語スキルを作ろうとすると、どうしても効果音をたくさん入れたくなると思うので、この点には注意してください。逆にこの制約を逆手にとって、ユーザがただ聞くだけのスキルではなく、インタラクティブに飽きさせないようにするのが重要なポイントだと思います。
+
+ではいよいよ、最後のシーンにいきましょう！
+
+Nextをクリックしてください。
+
+## 最終シーン：ワークショップ
+
+ではいよいよ最後のシーンです。最後のシーンは、ワークショップ的に、途中まではこの資料の中で説明しますので、ここまでに説明してきた内容を参考に、皆さんでストーリーを組み立てていただきたいと思います。あと、いきなりは厳しい、という方もいらっしゃるかと思うので、次の章でサンプルをご紹介します。それに沿ってやっていただいても結構です。
+
+ではやっていきましょう。
+
+Speak Blockを置いて設定していきます。シーンが変わるのでちょっと離れたところに置くと良いと思います。
+
+```
+ここで運命の選択です。
+```
+
+![story01-062](images/story01-062.png)
+
+効果音を入れましょう。「効果音ラボ」様の以下のURLから「ショック1」というのをダウンロードしてきてアップロードしてください。
+[https://soundeffect-lab.info/sound/search.php?searchtext=%E3%82%B7%E3%83%A7%E3%83%83%E3%82%AF&x=0&y=0](https://soundeffect-lab.info/sound/search.php?searchtext=%E3%82%B7%E3%83%A7%E3%83%83%E3%82%AF&x=0&y=0)
 
 
+![story01-063](images/story01-063.png)
+
+"Speech"で追加します。
+
+```
+魔法が解ける十二時まで時間はあまりありません。魔法使いのおばあさんとの約束を守るには今すぐ帰る必要があります。<break time="0.5s"/>でも幸せな舞踏会はまだまだ続きます。もしかすると魔法が解けても王子さまはシンデレラのことを信じてくれるかもしれません。<break time="0.5s"/>シンデレラは家に帰りますか？はい、か、いいえで答えてください。
+```
+
+![story01-064](images/story01-064.png)
+
+はい、ここでユーザ発話ですね、先程と同じく、Yes/Noの発話なのでInteraction Blockをおいて、Yes/No Intentでフローを作ってください。
+
+![story01-065](images/story01-065.png)
+
+そして、分岐後のSpeak Blockを以下のように並べて線でつなげます。elseのときはもう一度聞くようにぐるっと回すのも見慣れてきたのではないかなと思います。
+
+![story01-066](images/story01-066.png)
+
+elseにつながっているSpeak Blockだけ設定を入れておきます。
+
+```
+ごめんなさい。うまく聞き取れませんでした。シンデレラは家に帰りますか？はい、か、いいえで答えてください。
+```
+
+はい、ではここからは皆様におまかせします。はい、いいえ、それぞれのフローの先にストーリーを作ってみてください！
+
+## 付録1: ワークショップのサンプル例
+
+ワークショップ部分の一つのサンプル例をご紹介します。
 
 
+## 付録2: 補足
+
+### スキルの完成サンプルについて
+
+３つのサンプルをご紹介します。以下のダウンロードリンクをクリックすると、Voiceflow内にコピーされますので、参考にしてみてください。
+
+なお、繰り返しになりますが、
+
+Negative
+: このスキルを審査・公開しないようにお願いします。今後のワークショップで使えなくなってしまいます。
+
+- 今回のハンズオンとワークショップ冒頭部分までになっています。ここからストーリーを広げていただければと思います。
+[https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUxLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCt-ODp-ODvOODiOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NTgxMDg3MH0.dPeH-7auWHulY_7L6EydzCwyYvv1hoMHnsb3zpv0z1U](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUxLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCt-ODp-ODvOODiOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NTgxMDg3MH0.dPeH-7auWHulY_7L6EydzCwyYvv1hoMHnsb3zpv0z1U)
+
+- 付録１で説明したサンプル例を含めたものです。
+
+- ロングバージョンです。シンデレラのオリジナルの話に沿いながら、元木さんが作った台本で脚色しています。
+[https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxMDY4LCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCkyIsImlhdCI6MTU3NTgwOTU4MH0.76J9SuwCFYX5I6hGxr-MXxAJxAZF9EgLuTIOles5kCo](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxMDY4LCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCkyIsImlhdCI6MTU3NTgwOTU4MH0.76J9SuwCFYX5I6hGxr-MXxAJxAZF9EgLuTIOles5kCo)
