@@ -59,6 +59,7 @@
 <li>サウンドや効果音をたくさん使ってにぎやかな感じにします。</li>
 <li>登場人物のキャラクターごとに声を使い分けます。</li>
 <li>単にお話を聞くだけではなくて、ユーザの発話を元にストーリーが進んだり分岐したりします。</li>
+<li>プログラミング的な要素は今回は殆ど含めていません。</li>
 </ul>
 <p>スキルの全体はこういう感じになっています。</p>
 <p class="image-container"><img alt="story01-001" src="img/b73d6dec744e69cd.png"></p>
@@ -698,6 +699,45 @@
     
       <google-codelab-step label="付録1: ワークショップのサンプル例" duration="0">
         <p>ワークショップ部分の一つのサンプル例をご紹介します。</p>
+<p>ストーリーはこんな感じで考えてみました。</p>
+<ul>
+<li>「はい」、つまり、家に帰る方を選択すると、魔法使いが現れて、きちんと約束を守ったシンデレラに永遠に解けない魔法をかけてくれて、ハッピーエンド。</li>
+<li>「いいえ」、つまり、家に帰らない方を選択すると、魔法が解けてしまいますが、魔法の呪文を唱えることで、魔法使いが現れて、約束は守らなかったものの、今まで苦労してきたシンデレラのために永遠に解けない魔法をかけてくれて、こちらもハッピーエンド。</li>
+</ul>
+<h2 is-upgraded>「はい」の場合</h2>
+<p>では、「はい」の方から。</p>
+<pre><code>&lt;prosody pitch=&#34;x-high&#34;&gt;おばあさんとの約束は守らないとだめよね。ごめんなさい、王子さま、私はもう帰らないと行けないの、さようなら。&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-067" src="img/95b69284889b4271.png"></p>
+<pre><code>あぁ、待って。シンデレラ。
+</code></pre>
+<p class="image-container"><img alt="story01-068" src="img/2b9a365a354a26f0.png"></p>
+<pre><code>シンデレラは急いで大広間を出て行きましたが、あわてたひょうしに階段にひっかかって、ガラスのクツがぬげてしまいました。&lt;audio src=&#34;soundbank://soundlibrary/metal/metal_12&#34;/&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-069" src="img/e4a47320803ee038.png"></p>
+<pre><code>&lt;prosody pitch=&#34;x-high&#34;&gt;あぁ、靴が！&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-070" src="img/360af530c6eab121.png"></p>
+<pre><code>&lt;audio src=&#34;soundbank://soundlibrary/magic/amzn_sfx_fairy_melodic_chimes_01&#34;/&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-071" src="img/c516232f16ece74.png"></p>
+<pre><code>&lt;prosody pitch=&#34;x-low&#34; rate=&#34;slow&#34;&gt;ちゃんと私との約束を守ろうとしたんだね。えらいね、シンデレラ。これは私からのご褒美だよ。&lt;say-as interpret-as=&#34;interjection&#34;&gt;ちちんぷいぷい、えいっ。&lt;/say-as&gt;&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-072" src="img/ece4ecc76a14960a.png"></p>
+<pre><code>&lt;audio src=&#34;soundbank://soundlibrary/magic_spells/magic_spells_07&#34;/&gt;&lt;prosody pitch=&#34;x-low&#34; rate=&#34;slow&#34;&gt;これであんたの魔法はもう解けることはないよ。王子様と一緒に幸せに暮らしな。&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-073" src="img/f94adf064943b23.png"></p>
+<pre><code>&lt;prosody pitch=&#34;x-high&#34;&gt;ありがとう、おばあさん、本当にありがとう。&lt;/prosody&gt;
+</code></pre>
+<p class="image-container"><img alt="story01-074" src="img/2a529817a5a097f6.png"></p>
+<pre><code>その後、お城に迎えられたシンデレラは、王子さまと結婚して、いつまでも幸せに暮らしました。&lt;break time=&#34;0.5s&#34;/&gt;おしまい。
+</code></pre>
+<p class="image-container"><img alt="story01-075" src="img/3a6e3799c5c32655.png"></p>
+<p>ということで、ハッピーエンドのテーマです。「DOVA−SYNDROME」様にアップされている、カワサキヤスヒロ様の「piece」を使用させていただきます。以下よりダウンロード後、アップロードしてください。<br><a href="https://dova-s.jp/bgm/play11109.html" target="_blank">https://dova-s.jp/bgm/play11109.html</a></p>
+<p class="image-container"><img alt="story01-076" src="img/f5dcd5d640713468.png"></p>
+<p>はい、これで「はい」の方は終了です。サウンド・効果音も5つということで収まりました！</p>
+<h2 is-upgraded>「いいえ」の場合</h2>
+<p>では、次に「いいえ」の方です。こちらはちょっとハンズオンではやらなかったことも入れて、ひねってみたいと思います。</p>
 
 
       </google-codelab-step>
@@ -705,7 +745,7 @@
       <google-codelab-step label="付録2: 補足" duration="0">
         <h2 is-upgraded>スキルの完成サンプルについて</h2>
 <p>３つのサンプルをご紹介します。以下のダウンロードリンクをクリックすると、Voiceflow内にコピーされますので、参考にしてみてください。</p>
-<p>なお、繰り返しになりますが、</p>
+<p>なお、繰り返しになりますが、このスキルを審査・公開しないようにお願いします！</p>
 <aside class="warning"><p>このスキルを審査・公開しないようにお願いします。今後のワークショップで使えなくなってしまいます。</p>
 </aside>
 <ul>
