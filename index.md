@@ -27,7 +27,7 @@ feedback link: https://github.com/kun432/voiceflow-handson-story/issues
 ### 注意
 
 Negative
-: 本手順書は2019年11月21日時点のものですが、Voiceflowの開発はかなり活発なので、本手順書通りに進めてもうまくいかない場合や画面が変更されている場合があります。ご容赦ください。（必要な場合は補足します）
+: 本手順書は2019年12月11日時点のものですが、Voiceflowの開発はかなり活発なので、本手順書通りに進めてもうまくいかない場合や画面が変更されている場合があります。ご容赦ください。（必要な場合は補足します）
 
 Positive
 : 不具合やお気づきの点があれば、[https://github.com/kun432/voiceflow-handson-story/issues](https://github.com/kun432/voiceflow-handson-story/issues)でissue立てていただければと思います。PRも歓迎！
@@ -37,7 +37,7 @@ Positive
 
 ### 更新履歴
 
-- 2019/11/21    公開
+- 2019/12/11    公開
 
 ではNextをクリックしてください
 
