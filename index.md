@@ -1026,6 +1026,8 @@ elseにつながっているSpeak Blockだけ設定を入れておきます。
 
 ![story01-068](images/story01-068.png)
 
+後ろの方に「カランコロン」みたいな音が入ってます。
+
 ```
 シンデレラは急いで大広間を出て行きましたが、あわてたひょうしに階段にひっかかって、ガラスのクツがぬげてしまいました。<audio src="soundbank://soundlibrary/metal/metal_12"/>
 ```
@@ -1038,6 +1040,8 @@ elseにつながっているSpeak Blockだけ設定を入れておきます。
 
 ![story01-070](images/story01-070.png)
 
+魔法使いのおばあさんが現れるときの音です。
+
 ```
 <audio src="soundbank://soundlibrary/magic/amzn_sfx_fairy_melodic_chimes_01"/>
 ```
@@ -1045,10 +1049,12 @@ elseにつながっているSpeak Blockだけ設定を入れておきます。
 ![story01-071](images/story01-071.png)
 
 ```
-<prosody pitch="x-low" rate="slow">ちゃんと私との約束を守ろうとしたんだね。えらいね、シンデレラ。これは私からのご褒美だよ。<say-as interpret-as="interjection">ちちんぷいぷい、えいっ。</say-as></prosody>
+<prosody pitch="x-low" rate="slow">ちゃんと私との約束を守ろうとしたんだね。えらいね、シンデレラ。これは私からのご褒美だよ。ちちんぷいぷい、えいっ。</prosody>
 ```
 
 ![story01-072](images/story01-072.png)
+
+魔法の音が最初に入ってます。
 
 ```
 <audio src="soundbank://soundlibrary/magic_spells/magic_spells_07"/><prosody pitch="x-low" rate="slow">これであんたの魔法はもう解けることはないよ。王子様と一緒に幸せに暮らしな。</prosody>
@@ -1073,15 +1079,230 @@ elseにつながっているSpeak Blockだけ設定を入れておきます。
 
 ![story01-076](images/story01-076.png)
 
-はい、これで「はい」の方は終了です。サウンド・効果音も5つということで収まりました！
+はい、これで「はい」の方は終了です。サウンド・効果音も5つ以内に収まりました！
 
 ### 「いいえ」の場合
 
-では、次に「いいえ」の方です。こちらはちょっとハンズオンではやらなかったことも入れて、ひねってみたいと思います。
+では、次に「いいえ」の方です。「はい」と同じような感じで、ストーリーを終わらせてもいいんですが、こちらはちょっとハンズオンではやらなかったことも入れて、少しひねってみたいと思います。Speak Blockを設定していきましょう。
 
+```
+<prosody pitch="x-high">おばあさんとの約束は守りたいけど、もう二度と王子様と会えないかもしれないわ。私はどうすればいいの？</prosody>
+```
 
+![story01-077](images/story01-077.png)
 
+鐘の音です。
 
+```
+<audio src="soundbank://soundlibrary/bell/church/church_bells_02"/>12時の鐘が鳴り響きました。すると、
+```
+
+![story01-078](images/story01-078.png)
+
+魔法が解けてしまう音を入れます。「効果音ラボ」様の「煙モクモク」を使用させていただきます。以下よりダウンロード後、アップロードしてください。
+[https://soundeffect-lab.info/sound/search.php?searchtext=%E7%85%99&x=0&y=0](https://soundeffect-lab.info/sound/search.php?searchtext=%E7%85%99&x=0&y=0)
+
+![story01-079](images/story01-079.png)
+
+```
+シンデレラの美しいドレスやガラスの靴は消えてしまい、いつものボロボロの服に戻ってしまいました。
+```
+
+![story01-080](images/story01-080.png)
+
+```
+あれ、君はいったい誰だい？
+```
+
+![story01-081](images/story01-081.png)
+
+```
+<prosody pitch="x-high">あぁ、こんな姿じゃ、やっぱり王子様にわかってもらえないのね、約束を破ってしまってごめんなさい、おばあさん。</prosody><break time="1s"/>
+```
+
+![story01-082](images/story01-082.png)
+
+Speak Blockを一つ追加して以下のように設定します。
+
+```
+魔法が解けてしまったシンデレラ。どうすればシンデレラを助けることができるでしょうか？ここまでのお話を思い出して、お答えください！
+```
+
+![story01-083](images/story01-084.png)
+
+はい、ここでユーザの発話を受け取ります。先に答えを言ってしまうと、「ちちんぷいぷい」か「アブラカダブラ」と言えば正解になります。ちょっと伏線っぽい感じがしますね！
+
+Interaction Blockをおいて設定していきます。が、「ちちんぷいぷい」と「アブラカダブラ」はすでにインテントが登録されているので、再利用ができるんですね！よってChoicesに"+ Add choice" で "chichinpuipui_intent" と "aburakadabura_intent" を設定するだけでオッケーです！
+
+![story01-084](images/story01-084.png)
+
+先に間違いの方を設定しますが、ここを少しひねります。1回で正解しない場合はヒントを出すようにしてみましょう。Speak Blockを以下のようにおいてください。
+
+![story01-085](images/story01-085.png)
+
+上の方はこんな感じ。
+
+```
+<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_negative_response_01"/>間違いです。もう一度考えてください。どうすればシンデレラを助けることができるでしょうか？ 
+```
+
+![story01-086](images/story01-086.png)
+
+下の方はヒントを入れます。
+
+```
+<audio src="soundbank://soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_negative_response_01"/>間違いです。ヒントです。シンデレラを変身させる魔法の言葉があったのを覚えていますか？さぁ、どうすればシンデレラを助けることができるでしょうか？ 
+```
+
+![story01-087](images/story01-087.png)
+
+で、これを実現するには、間違えたときに1回目と2回目以降という「回数」を記録しておいて、この回数に応じて分岐をすればいいということになりますね。Voiceflowでは、変数（Variable）、Set Block、If Blockを使うとこれが実現できます！では早速やってみましょう。
+
+まず、変数を作成します。変数の作成は"Variable"メニューから行います。左上の小さなアイコンの一番下をクリックします。
+
+![story01-088](images/story01-088.png)
+
+すると"Variables"というメニューが出てくると思いますので、上の"Create Variable"の下の入力欄に、"count"と入力してENTERキーを押してください。
+
+![story01-089](images/story01-089.png)
+
+下の方にある"Variables"の一番最後に"count"が追加されれば成功です！これで間違いの回数を保存しておくための「」ができました。
+
+![story01-090](images/story01-090.png)
+
+変数は作った直後はただの「箱」ができた状態です。この中に「回数」（「値」といいます）を入れてあげる必要があります。（変数に値を入れることを「代入」と言います。）まず、最初に間違いの回数を一旦ゼロにしましょう（「初期化」と言います。）変数に値を入れる場合はSet Blockを使います。
+
+再度、Blocksメニューを開きます。
+
+![story01-091](images/story01-091.png)
+
+間違いの回数なので、ユーザに聞く前にゼロにする必要があります。以下のようにSet Blockを配置して、線をつなぎ直してください。
+
+![story01-092](images/story01-092.png)
+
+Set Blockの設定です。変数countを0に初期化します。"Select Variable"をクリックして、"count"を選択します。
+
+![story01-093](images/story01-093.png)
+
+Positive
+: まれに変数がリストに表示されない場合があります。その場合は変数名の最初の数文字を入力すると表示されます。
+
+そして、Valueと書かれた入力欄に"0"を入力します。
+
+![story01-094](images/story01-094.png)
+
+さらに、もう一つ、Set Blockを以下のように配置して、Interaction Blockのelseから線でつないでください。今度は間違えた「後」になります。
+
+![story01-095](images/story01-095.png)
+
+ここで、間違えた回数を増やします。Set Blockの設定をやりましょう。先ほどと同じように"Select Variable"のところは、"count"を選択します。そして、入力欄のところは、一番右の"</>"をクリックして "Variable"を選択します。
+
+![story01-096](images/story01-096.png)
+
+すると、”Select Variable"と表示が変わり、変数を選択することができます。"count"を選んでください。
+
+![story01-097](images/story01-097.png)
+
+"count"を選んだら、もう一度一番右の"</>"をクリックして今度は"+"を選択します。
+
+![story01-098](images/story01-098.png)
+
+また表示が変わりましたね！そして最後に"value"のところに"1"を入力してください。
+
+![story01-099](images/story01-099.png)
+
+これで、変数countに、変数countをプラス1した値を入れるってことになります。つまり、この時点では、変数countは0なので、0+1=1となって、1が変数countに入ります。そして、もう一度間違った場合にはさらに+1されて変数countが2になるというわけです。ちょっと直感的ではないかもしれませんが、プログラミングの考え方では、変数に値を追加するにはこういう考え方になるということを覚えてください。
+
+では次に、この変数の値を元に分岐するようにしましょう。一番最初にSpeak Blockを2つ作って、1回目の間違いと2回目以降の間違いを用意しました。なので、この手前で変数countの値をチェックして１よりも大きければ（1は含まない、2以上）、2回目以降の間違いに流れて、それ以外は1回目の間違いに流すようにすればOKです。
+
+こういうのを「条件分岐」といいます。Voiceflowで条件分岐を行うには、If Blockを使います。If Blockを以下のように配置してSet Block、2つのSpeak Blockとつなげてください。
+
+![story01-100](images/story01-100.png)
+
+If Blockの設定です。「変数countが1より大きい」場合は1のフローへ、それ以外はelseに流れるようにします。まず"Select Variable"をクリックして、"count"を選択してください。
+
+![story01-101](images/story01-101.png)
+
+次に、”="をクリックすると、以下のようにメニューが表示されますので">"を選択します。
+
+![story01-102](images/story01-102.png)
+
+最後に"value"に1を入力します。上の表示が"({count} > 1)"になっていればOKです！
+
+![story01-103](images/story01-103.png)
+
+はい、これで、間違った回数によってヒントが出るか出ないかの分岐ができました。で、間違いなので、もう一度ユーザの発話を受け取る必要があります。2つのSpeak BlockからInteraction Blockまで戻してあげましょう。ちょっと見にくくなりましたけど、以下のように線でつなげてください。
+
+![story01-104](images/story01-104.png)
+
+最後に、正解した場合の発話を設定すれば終わりです。Speak Blockをおいて「ちちんぷいぷい」の方を設定していきましょう。
+
+```
+<audio src="soundbank://soundlibrary/magic/amzn_sfx_fairy_melodic_chimes_01"/>
+```
+
+![story01-105](images/story01-105.png)
+
+```
+<prosody pitch="x-low" rate="slow">私との約束を破るなんて、よっぽど舞踏会が楽しかったんだろう。しょうがないこだね。でも、今まで十分苦労してきたようだから、助けてあげるとするよ。ちちんぷいぷい、えいっ。</prosody>
+```
+
+![story01-106](images/story01-106.png)
+
+```
+<audio src="soundbank://soundlibrary/magic_spells/magic_spells_07"/>
+```
+
+![story01-107](images/story01-107.png)
+
+同じようにして、「アブラカダブラ」の方も設定していきますが、ここはすこし楽をしましょう。「ちちんぷいぷい」のSpeak Blockを選択して、Windows なら Ctrl+C、MacならCommand+Cでコピーしてみてください。上に「ブロックが一つコピーされました」というような表示が見えればオッケーです。
+
+![story01-108](images/story01-108.png)
+
+ではペーストしてみてください。WindowsならCtrl+V，MacならCommand+Vです。ちょっと離れたところにSpeak Blockが配置されました。実はこんなかんじで、ブロックのコピペができます！
+
+![story01-109](images/story01-109.png)
+
+で、もちろん中身もコピーされてますので、「ちちんぷいぷい」のところを「アブラカダブラ」に変えればオッケーです。
+
+![story01-110](images/story01-110.png)
+
+はい、ではいよいよ最後のSpeak Blockです。以下のように設定してください。
+
+```
+なんと魔法つかいのおばあさんが現れて杖を一振りすると、みすぼらしいシンデレラはまたキレイなドレスとガラスの靴に包まれた美しい娘に戻ったのでした。
+```
+
+![story01-111](images/story01-111.png)
+
+```
+<audio src="soundbank://soundlibrary/magic_spells/magic_spells_07"/><prosody pitch="x-low" rate="slow">これであんたの魔法はもう解けることはないよ。王子様と一緒に幸せに暮らしな。</prosody>
+```
+
+![story01-112](images/story01-112.png)
+
+```
+<prosody pitch="x-high">ありがとう、おばあさん、本当にありがとう。</prosody>
+```
+
+![story01-113](images/story01-113.png)
+
+```
+その後、お城に迎えられたシンデレラは、王子さまと結婚して、いつまでも幸せに暮らしました。<break time="0.5s"/>おしまい。
+```
+
+![story01-114](images/story01-114.png)
+
+ということで、ハッピーエンドのテーマです。「DOVA−SYNDROME」様にアップされている、カワサキヤスヒロ様の「piece」を使用させていただきます。以下よりダウンロード後、アップロードしてください。
+[https://dova-s.jp/bgm/play11109.html](https://dova-s.jp/bgm/play11109.html)
+
+![story01-115](images/story01-115.png)
+
+はい、これですべて完了です。アップロードしてテストして、正しく動くか確認してみてください。
+
+これからもVoiceflowでたくさんの楽しいスキルが生まれますように。お疲れさまでした！
+
+![byebye_girl](images/byebye_girl.png)
 
 ## 付録2: 補足
 
@@ -1089,15 +1310,19 @@ elseにつながっているSpeak Blockだけ設定を入れておきます。
 
 ３つのサンプルをご紹介します。以下のダウンロードリンクをクリックすると、Voiceflow内にコピーされますので、参考にしてみてください。
 
-なお、繰り返しになりますが、このスキルを審査・公開しないようにお願いします！
+サンプルのダウンロード方法の詳細は、手前味噌ですいませんが、以下の記事内の「スキルを受け取る側」のところをご覧ください。
+
+Voiceflow TIPS #21 スキルの受け渡し - kun432's blog
+[https://kun432.hatenablog.com/entry/voiceflow_tips_21_shareing_skills](https://kun432.hatenablog.com/entry/voiceflow_tips_21_shareing_skills)
 
 Negative
-: このスキルを審査・公開しないようにお願いします。今後のワークショップで使えなくなってしまいます。
+: なお、繰り返しになりますが、これらのスキルを審査・公開しないようにお願いします！今後のハンズオンで使えなくなってしまうので・・・・
 
 - 今回のハンズオンとワークショップ冒頭部分までになっています。ここからストーリーを広げていただければと思います。
-[https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUxLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCt-ODp-ODvOODiOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NTgxMDg3MH0.dPeH-7auWHulY_7L6EydzCwyYvv1hoMHnsb3zpv0z1U](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUxLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCt-ODp-ODvOODiOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NTgxMDg3MH0.dPeH-7auWHulY_7L6EydzCwyYvv1hoMHnsb3zpv0z1U)
+[ダウンロード](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUxLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCt-ODp-ODvOODiOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NTgxMDg3MH0.dPeH-7auWHulY_7L6EydzCwyYvv1hoMHnsb3zpv0z1U)
 
 - 付録１で説明したサンプル例を含めたものです。
+[ダウンロード](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxODUyLCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-OCteODs-ODl-ODq-ODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NjAwMDQyOH0.EuRwfMgHvyvPh7vgjxyitFzIml_w_TfSs0CkysElIHk)
 
 - ロングバージョンです。シンデレラのオリジナルの話に沿いながら、元木さんが作った台本で脚色しています。
-[https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxMDY4LCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCkyIsImlhdCI6MTU3NTgwOTU4MH0.76J9SuwCFYX5I6hGxr-MXxAJxAZF9EgLuTIOles5kCo](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxMDY4LCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCkyIsImlhdCI6MTU3NTgwOTU4MH0.76J9SuwCFYX5I6hGxr-MXxAJxAZF9EgLuTIOles5kCo)
+[ダウンロード](https://creator.voiceflow.com/dashboard?import=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwcm9qZWN0SWQiOjgxMDY4LCJwcm9qZWN0TmFtZSI6IuS4lueVjOOBruOBiuOBqOOBiOOBu-OCk-ODreODs-OCsOODkOODvOOCuOODp-ODsyIsImlhdCI6MTU3NjAwMDQ1MH0.f--2OS5OWciJ0JgCNQaM_1nn3a3UyW7P_V1asYWD0UI)
