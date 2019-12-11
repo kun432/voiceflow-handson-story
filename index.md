@@ -909,6 +909,10 @@ Positive
 
 [https://dova-s.jp/bgm/play10492.html](https://dova-s.jp/bgm/play10492.html)
 
+Positive
+: 15秒程度で終わるショートバージョンを用意しました。以下よりダウンロードしてください。
+[https://www.dropbox.com/s/77ppxhqwq57bi9h/pokapoka_waltz_short.mp3?dl=0](https://www.dropbox.com/s/77ppxhqwq57bi9h/pokapoka_waltz_short.mp3?dl=0)
+
 Negative
 : 素材を使用してスキルを作成する場合、素材提供元サイトの規約等を必ず確認の上ご利用いただくようお願いたします。
 
